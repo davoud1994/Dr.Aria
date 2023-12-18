@@ -72,6 +72,8 @@ Version:	1.1
 }
 
 
+
+
 /* ===============================* */
 #body{
 	font-family: 'Vazir', Arial, sans-serif;
@@ -4040,16 +4042,18 @@ Version:	1.1
 	width:100%;
 	background:#000;
 	opacity:0.1;
+	
 }
 .footer .single-footer{
 	
 }
 .footer .single-footer .social{
-	margin-top:25px;
+	margin-top:30px;
 }
 .footer .single-footer .social li{
 	display:inline-block;
-	margin-right:10px;
+	
+	margin-left:10px;
 }
 .footer .single-footer .social li:last-child{
 	margin-right:0px;
@@ -4066,6 +4070,7 @@ Version:	1.1
 	display: block;
 	color:#fff;
 	font-size: 16px;
+	
 }
 .footer .single-footer .social li a:hover{
 	color:#1A76D1;
@@ -4106,6 +4111,9 @@ Version:	1.1
 	padding-bottom:20px;
 	text-transform:capitalize;
 	position:relative;
+	
+	margin-bottom:40px;
+	text-align:right;
 }
 .footer .single-footer h2::before{
 	position: absolute;
@@ -4115,6 +4123,7 @@ Version:	1.1
 	height: 3px;
 	width: 50px;
 	background: #fff;
+	margin-left:195px;
 }
 .footer .single-footer .time-sidual{
 	margin-top:15px;
@@ -4138,7 +4147,11 @@ Version:	1.1
 }
 .footer .single-footer p{
 	color:#fff;
+	text-transform:capitalize;
+	text-align:right;
+		
 }
+
 .footer .single-footer .newsletter-inner{
 	margin-top:20px;
 	position:relative;
