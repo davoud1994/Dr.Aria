@@ -4,7 +4,7 @@ Author Name: Naimur Rahman
 Website: http://wpthemesgrid.com/
 Description: Mediplus - Doctor HTML Template.
 Version:	1.1
-========================================*/   
+========================================*/
 /*======================================
 [ CSS Table of contents ]
 * Global CSS
@@ -44,9 +44,9 @@ Version:	1.1
 * Doctor Calendar CSS
 * About Us CSS
 * Footer CSS
-========================================*/ 
+========================================*/
 /*=============================
-	Global CSS 
+	Global CSS
 ===============================*/
 
 /* =============my class==================* */
@@ -70,6 +70,10 @@ Version:	1.1
 #office{
 	cursor: pointer;
 }
+
+.import-links-footer{
+    margin-right:50px;
+    }
 
 
 
@@ -150,7 +154,7 @@ Version:	1.1
 	box-shadow: -4px 0px 5px #00000036;
 }
 .get-pro:hover{
-	
+
 }
 #scrollUp {
 	bottom: 15px;
@@ -265,11 +269,11 @@ Version:	1.1
 	background:#44ce6f;
 }
 /*=============================
-	End Global CSS 
+	End Global CSS
 ===============================*/
 
 /*===================
-	Start Header CSS 
+	Start Header CSS
 =====================*/
 .header{
 	background-color:#fff;
@@ -285,7 +289,7 @@ Version:	1.1
 }
 .header .topbar{
 	padding:10px 0;
-	
+
 }
 .header .top-link{
 	float:left;
@@ -460,7 +464,7 @@ Version:	1.1
 }
 /* Dropdown Menu */
 .header .nav li .dropdown {
-	
+
 	background: #fff;
 	width: 300px;
 	position: absolute;
@@ -481,7 +485,7 @@ Version:	1.1
 	top: 74px;
 	border-right:3px solid #2889e4;
 
-	
+
 }
 .header .nav li:hover .dropdown{
 	opacity:1;
@@ -497,11 +501,11 @@ Version:	1.1
 }
 .header .nav li .dropdown li:last-child{
 	border:none;
-	
+
 }
 .header .nav li .dropdown li a {
 	padding: 12px 15px;
-	
+
 	color: #666;
 	display: block;
 	font-weight: 400;
@@ -515,17 +519,17 @@ Version:	1.1
 }
 .header .nav li .dropdown li a:before{
 	display:none;
-	
+
 }
 .header .nav li .dropdown li:last-child a{
 	border-bottom:0px;
-	
+
 }
 .header .nav li .dropdown li:hover a{
 	color:#1A76D1;
 }
 .header .nav li .dropdown li a:hover{
-	border-color:transparent;	
+	border-color:transparent;
 }
 /* Right Bar */
 .header.style2 .main-menu{
@@ -736,8 +740,8 @@ Version:	1.1
 	margin-top:100px;
 	padding: 0;
 	height: 230px;
-	
- 
+
+
 }
 .schedule .schedule-inner {
 	position: relative;
@@ -755,18 +759,18 @@ Version:	1.1
     -moz-transition: all .3s ease-out 0s;
     -ms-transition: all .3s ease-out 0s;
     -o-transition: all .3s ease-out 0s;
-    transition: all .3s ease-out 0s; 
-		
+    transition: all .3s ease-out 0s;
+
 }
 .schedule .single-schedule .inner {
 	overflow:hidden;
 	position: relative;
 	padding:30px;
 	z-index:2;
-	
+
 }
 .schedule .single-schedule:before{
-	
+
 	position: absolute;
     z-index: -1;
     content: '';
@@ -818,7 +822,7 @@ Version:	1.1
 	text-transform:capitalize;
 	color:#fff;
 	margin-top:13px;
-	
+
 }
 .schedule .single-schedule p{
 	color:#fff;
@@ -845,31 +849,31 @@ Version:	1.1
 	-moz-transition:all 0.4s ease;
 	transition:all 0.4s ease;
 
-	
+
 }
 .schedule .single-schedule a:hover:before{
 	width:100%;
 	width:100%;
-	
+
 }
 .schedule .single-schedule a i{
 	margin-left:10px;
 
 }
 .schedule .single-schedule .time-sidual{
-	
+
 }
 .schedule .single-schedule .time-sidual{
 	overflow:hidden;
 	margin-top:17px;
-	
+
 }
 .schedule .single-schedule .time-sidual li {
 	display: block;
 	color: #fff;
 	width: 100%;
 	margin-bottom:3px;
-	
+
 }
 .schedule .single-schedule .time-sidual li:last-child{
 	margin:0;
@@ -967,7 +971,7 @@ Version:	1.1
 	background-repeat:no-repeat;
 }
 .fun-facts .single-fun {
-	
+
 }
 .fun-facts .single-fun i {
 	position: absolute;
@@ -1780,7 +1784,7 @@ Version:	1.1
 	position:relative;
 }
 .clients .single-clients{
-	
+
 }
 .clients .single-clients img {
 	width: 100%;
@@ -1789,7 +1793,7 @@ Version:	1.1
 	text-align: center;
 	float: none;
 	padding: 0 35px;
-	
+
 }
 
 
@@ -1799,7 +1803,7 @@ Version:	1.1
 
 /*====================
 	Start Team CSS
-======================*/ 
+======================*/
 .team{
 	background-image:url('img/testi-bg.jpg');
 	background-size:cover;
@@ -1988,7 +1992,7 @@ Version:	1.1
 	margin-top: 30px;
 }
 .doctor-details-item .doctor-details-work .time-sidual{
-	
+
 }
 .doctor-details-item .doctor-details-work .time-sidual{
 	overflow:hidden;
@@ -2013,7 +2017,7 @@ Version:	1.1
 	padding-top: 70px;
 }
 .doctor-details-item .doctor-details-biography {
- 
+
 }
 .doctor-details-item .doctor-details-biography h3 {
   font-weight: 600;
@@ -2050,7 +2054,7 @@ Version:	1.1
 }
 /*====================
 	End Team CSS
-======================*/ 
+======================*/
 
 /*=======================
 	Start Blog CSS
@@ -2737,7 +2741,7 @@ Version:	1.1
 	-moz-transition: all 0.4s ease;
 	transition: all 0.4s ease;
 	padding: 15px 30px;
-	
+
 }
 .news-single .form-group .button:hover {
 	background: #353535;
@@ -3002,7 +3006,7 @@ Version:	1.1
 	margin: 0;
 	margin-top: 20px;
 	display:inline-block;
-	
+
 }
 .login .login-form .checkbox label {
 	font-size: 14px;
@@ -3157,7 +3161,7 @@ Version:	1.1
 	margin: 0;
 	margin-top: 20px;
 	display:inline-block;
-	
+
 }
 .register .register-form .checkbox label {
 	font-size: 14px;
@@ -3387,7 +3391,7 @@ Version:	1.1
 	margin: 0;
 	margin-top: 20px;
 	display:inline-block;
-	
+
 }
 .contact-us .contact-us-form .checkbox label {
 	font-size: 14px;
@@ -3488,7 +3492,7 @@ Version:	1.1
 	color:#fff;
 	font-size:18px;
 	font-weight:600;
-	
+
 }
 .contact-us .single-info .content p{
 	color:#fff;
@@ -3505,7 +3509,7 @@ Version:	1.1
 
 /*========================
 	Start Error 404 CSS
-==========================*/ 
+==========================*/
 .error-page {
 	text-align: center;
 	background: #fff;
@@ -3564,11 +3568,11 @@ Version:	1.1
 }
 /*========================
 	End Error 404 CSS
-==========================*/ 
+==========================*/
 
 /*===========================
 	Start Mail Success CSS
-=============================*/ 
+=============================*/
 .mail-seccess {
 	text-align: center;
 	background: #fff;
@@ -3599,11 +3603,11 @@ Version:	1.1
 }
 /*===========================
 	End Mail Success CSS
-=============================*/ 
+=============================*/
 
 /*=========================
 	Start Newsletter CSS
-===========================*/  
+===========================*/
 .newsletter{
 	background:#EDF2FF;
 }
@@ -3656,7 +3660,7 @@ Version:	1.1
 }
 /*=========================
 	End Newsletter CSS
-===========================*/  
+===========================*/
 
 /*===============================
 	Start Doctor Calendar CSS
@@ -4027,32 +4031,36 @@ Version:	1.1
 ===========================*/
 .footer{
 	position:relative;
+
+
 }
 .footer .footer-top{
-	padding:100px 0px;
+	padding-top:50px;
+	padding-bottom:50px;
 	position:relative;
 	background:#1A76D1;
+
 }
 .footer .footer-top:before{
 	position:absolute;
 	content:"";
 	left:0;
 	top:0;
-	height:100%;
+    height:100%;
 	width:100%;
 	background:#000;
 	opacity:0.1;
-	
+
 }
 .footer .single-footer{
-	
+
 }
 .footer .single-footer .social{
 	margin-top:30px;
 }
 .footer .single-footer .social li{
 	display:inline-block;
-	
+
 	margin-left:10px;
 }
 .footer .single-footer .social li:last-child{
@@ -4070,18 +4078,18 @@ Version:	1.1
 	display: block;
 	color:#fff;
 	font-size: 16px;
-	
+
 }
 .footer .single-footer .social li a:hover{
 	color:#1A76D1;
 	background:#fff;
 	border-color:transparent;
 }
-.footer .single-footer .social li a i{
-	
-}
+
+
 .footer .single-footer.f-link li a i{
 	margin-right:10px;
+
 }
 .footer .single-footer.f-link li{
 	display:block;
@@ -4111,7 +4119,6 @@ Version:	1.1
 	padding-bottom:20px;
 	text-transform:capitalize;
 	position:relative;
-	
 	margin-bottom:40px;
 	text-align:right;
 }
@@ -4139,7 +4146,7 @@ Version:	1.1
 }
 .footer .single-footer .time-sidual li span{
 	display:inline-block;
-	float:right;
+	/* float:right; */
 }
 .footer .single-footer .day-head .time {
 	font-weight: 400;
@@ -4149,7 +4156,7 @@ Version:	1.1
 	color:#fff;
 	text-transform:capitalize;
 	text-align:right;
-		
+    margin-left: 2px;
 }
 
 .footer .single-footer .newsletter-inner{
