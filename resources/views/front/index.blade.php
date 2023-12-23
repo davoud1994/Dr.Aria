@@ -52,7 +52,7 @@
             scroll-behavior: smooth;
         }
 
-        #main_list_group{
+        #main_list_group {
             display: flex;
             flex-direction: row-reverse;
             flex-wrap: wrap;
@@ -66,7 +66,7 @@
             position: relative;
             overflow: hidden;
             transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out;
-            background-color:#0080ff36 ;
+            background-color: #0080ff36;
 
 
         }
@@ -88,9 +88,9 @@
 
         }
 
-        .list-group-item.active{
-	
-            background-color:#1A76D1  !important;
+        .list-group-item.active {
+
+            background-color: #1A76D1 !important;
         }
 
         .list-group-item.active::before {
@@ -115,7 +115,7 @@
 
         }
 
-        .img{
+        .img {
             margin-right: 200px;
             object-fit: contain;
             width: 300px;
@@ -642,7 +642,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-12" >
+                <div class="col-lg-12 col-md-12 col-12">
                     <ul class="list-group list-group-horizontal" id="main_list_group">
                         <li class="list-group-item" onclick="showAlert('1', 'message1', event)">
                             <i class="fa fa-bank"></i>
@@ -654,21 +654,21 @@
 
                     </ul>
                     <div class="col-lg-12 col-md-12 col-12">
-                    <div class="message-container">
-                        <div class="message" id="message1">
-                            <p>عکس</p>
-                            <img src="download.png" class="img">
+                        <div class="message-container">
+                            <div class="message" id="message1">
+                                <p>عکس</p>
+                                <img src="download.png" class="img">
+                            </div>
+                            <div class="message" id="message2">محتوای ایتم 2</div>
+                            <div class="message" id="message3">محتوای ایتم 3</div>
+                            <div class="message" id="message3">محتوای ایتم 4</div>
                         </div>
-                        <div class="message" id="message2">محتوای ایتم 2</div>
-                        <div class="message" id="message3">محتوای ایتم 3</div>
-                        <div class="message" id="message3">محتوای ایتم 4</div>
-                    </div>
                     </div>
                 </div>
-                    <!-- End Single Service -->
-                </div>
-
+                <!-- End Single Service -->
             </div>
+
+        </div>
         </div>
     </section>
     <!--/ End service -->
@@ -1019,8 +1019,12 @@
                         <div class="single-footer">
                             <h2>درباره ما</h2>
 
+                         
+                                <p>{{$info1}}</p>
+                          
 
-                            <p>
+
+                            {{-- <p>
 
 															شرکت فناوران آویژه آریا با هدف ارائه مشاوره، آموزش و طراحی و اجرای نرم افزار و وب سایت های
 															تخصصی پزشکی آریا از سال ۱۳۹۰ شروع به کار نموده است .
@@ -1029,7 +1033,7 @@
 															سلامت تولید نماید و مورد تایید پارک علم و فناوری، تحت نظر وزارت علوم، تحقیقات و فناوری قرار
 															گیرد.
 
-                            </p>
+                            </p> --}}
 
                             <!-- Social -->
                             <ul class="social">
@@ -1049,16 +1053,10 @@
                             <div class="row">
                                 <div class="col-lg-20 col-md-20">
                                     <ul class='import-links-footer'>
-                                        <li><a href="#"><i class="fa fa-caret-left"aria-hidden="true"></i>
-                                                سوالات مهم</a></li>
-                                        <li><a href="#"><i class="fa fa-caret-left"
-                                                    aria-hidden="true"></i>مقالات</a></li>
-                                        <li><a href="#"><i class="fa fa-caret-left" aria-hidden="true"> </i>
-                                                   خدمات</a></li>
-                                        {{-- <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Our
-                                                Cases</a></li> --}}
-                                        <li><a href="#"><i class="fa fa-caret-left"
-                                                    aria-hidden="true"></i>خانه </a></li>
+                                        @foreach ($info2 as $item)
+                                            <li><a href="#"><i class="fa fa-caret-left"aria-hidden="true"></i>
+                                                    {{ $item->Links }}</a></li>
+                                        @endforeach
                                     </ul>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-12">
@@ -1080,8 +1078,12 @@
                     </div>
                     <div class="col-lg-3 col-md-6 col-12">
                         <div class="single-footer">
+
                             <h2>آدرس شرکت</h2>
-                            <p><p>همدان - چهاراه تختی- &nbsp;خیابان شهید غفاری - مجتمع نرم افزار پزشکی آریا دکتر</p></p>
+                            
+                                <p>{{$info3}}</p>  
+                            
+                          
                             {{-- <ul class="time-sidual">
                                 <li class="day">Monday - Fridayp <span>8.00-20.00</span></li>
                                 <li class="day">Saturday <span>9.00-18.30</span></li>
@@ -1184,7 +1186,7 @@
             document.querySelector('.message-container').style.display = 'block';
 
             // Hide all messages
-            document.querySelectorAll('.message').forEach(function (msg) {
+            document.querySelectorAll('.message').forEach(function(msg) {
                 msg.style.display = 'none';
             });
 
@@ -1192,14 +1194,14 @@
             messageElement.style.display = 'block';
 
             // Remove 'active' class from all list items
-            document.querySelectorAll('.list-group-item').forEach(function (item) {
+            document.querySelectorAll('.list-group-item').forEach(function(item) {
                 item.classList.remove('active');
             });
 
             // Add 'active' class to the clicked list item
             event.target.closest('.list-group-item').classList.add('active');
 
-            setTimeout(function () {
+            setTimeout(function() {
                 // Gradually increase opacity to 1
                 messageElement.style.opacity = 1;
             }, 500);
