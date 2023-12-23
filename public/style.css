@@ -153,9 +153,9 @@ Version:	1.1
 	cursor: pointer;
 	box-shadow: -4px 0px 5px #00000036;
 }
-.get-pro:hover{
+/* .get-pro:hover{
 
-}
+} */
 #scrollUp {
 	bottom: 15px;
 	right: 15px;
@@ -1045,7 +1045,7 @@ Version:	1.1
 .why-choose .choose-left p{
 	margin-bottom:35px;
 }
-.why-choose .choose-left .list{}
+/* .why-choose .choose-left .list{} */
 .why-choose .choose-left .list li {
 	color: #868686;
 	margin-bottom: 12px;
@@ -1103,7 +1103,7 @@ Version:	1.1
 	height: 200px;
 	background: #fff;
 	opacity: 0;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	/* -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; */
 	border-radius: 100%;
 	-webkit-animation: waves 3s ease-in-out infinite;
 	animation: waves 3s ease-in-out infinite;
@@ -1376,7 +1376,7 @@ Version:	1.1
 .services .single-service{
 	margin:30px 0;
 	position:relative;
-	padding-left:70px;
+	padding-left:700px;
 }
 .services .single-service i{
 	font-size:45px;
@@ -1529,7 +1529,7 @@ Version:	1.1
 	border-radius: 3px;
 	margin: 0 0 0 -52px;
 	margin-top: 49px;
-	box-sizing: ;
+	/* box-sizing: ; */
 }
 .testimonials .owl-dots .owl-dot {
 	display: inline-block;

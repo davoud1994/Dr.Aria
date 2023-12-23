@@ -51,6 +51,82 @@
         body {
             scroll-behavior: smooth;
         }
+
+        #main_list_group{
+            display: flex;
+            flex-direction: row-reverse;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+
+
+        .list-group-item {
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out;
+            background-color:#0080ff36 ;
+
+
+        }
+
+
+        .list-group-item::before {
+            border-radius: 100px;
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 10%;
+            transform: translateX(50%) scaleX(0);
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 10px 10px 0;
+            border-color: transparent transparent transparent transparent;
+            transition: transform 0.5s ease-in-out, border-bottom 0.5s ease-in-out;
+
+        }
+
+        .list-group-item.active{
+	
+            background-color:#1A76D1  !important;
+        }
+
+        .list-group-item.active::before {
+            transform: translateX(-50%) scaleX(1);
+            border-width: 30px 10px 10px;
+            border-bottom-color: rgba(229, 255, 83, 0.623);
+            border-radius: 100px;
+
+        }
+
+        .message-container {
+            text-align: right;
+            background-color: rgb(173, 230, 227);
+            margin-top: 10px;
+            margin-right: 50px;
+            margin-left: 50px;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: row-reverse;
+            flex-wrap: wrap;
+
+        }
+
+        .img{
+            margin-right: 200px;
+            object-fit: contain;
+            width: 300px;
+            height: 300px;
+        }
+
+
+        .message {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
     </style>
 </head>
 
@@ -555,7 +631,7 @@
 
     <!-- Start service -->
     <section class="services section">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
@@ -566,66 +642,32 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Service -->
-                    <div class="single-service">
-                        <i class="icofont icofont-prescription"></i>
-                        <h4><a href="service-details.html">General Treatment</a></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut
-                            imperdiet. </p>
+                <div class="col-lg-12 col-md-12 col-12" >
+                    <ul class="list-group list-group-horizontal" id="main_list_group">
+                        <li class="list-group-item" onclick="showAlert('1', 'message1', event)">
+                            <i class="fa fa-bank"></i>
+                        </li>
+                        <li class="list-group-item" onclick="showAlert('2', 'message2', event)">
+                            <i class="fa fa-address-book"></i>
+                        </li>
+
+
+                    </ul>
+                    <div class="col-lg-12 col-md-12 col-12">
+                    <div class="message-container">
+                        <div class="message" id="message1">
+                            <p>عکس</p>
+                            <img src="download.png" class="img">
+                        </div>
+                        <div class="message" id="message2">محتوای ایتم 2</div>
+                        <div class="message" id="message3">محتوای ایتم 3</div>
+                        <div class="message" id="message3">محتوای ایتم 4</div>
                     </div>
+                    </div>
+                </div>
                     <!-- End Single Service -->
                 </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Service -->
-                    <div class="single-service">
-                        <i class="icofont icofont-tooth"></i>
-                        <h4><a href="service-details.html">Teeth Whitening</a></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut
-                            imperdiet. </p>
-                    </div>
-                    <!-- End Single Service -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Service -->
-                    <div class="single-service">
-                        <i class="icofont icofont-heart-alt"></i>
-                        <h4><a href="service-details.html">Heart Surgery</a></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut
-                            imperdiet. </p>
-                    </div>
-                    <!-- End Single Service -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Service -->
-                    <div class="single-service">
-                        <i class="icofont icofont-listening"></i>
-                        <h4><a href="service-details.html">Ear Treatment</a></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut
-                            imperdiet. </p>
-                    </div>
-                    <!-- End Single Service -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Service -->
-                    <div class="single-service">
-                        <i class="icofont icofont-eye-alt"></i>
-                        <h4><a href="service-details.html">Vision Problems</a></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut
-                            imperdiet. </p>
-                    </div>
-                    <!-- End Single Service -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Service -->
-                    <div class="single-service">
-                        <i class="icofont icofont-blood"></i>
-                        <h4><a href="service-details.html">Blood Transfusion</a></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut
-                            imperdiet. </p>
-                    </div>
-                    <!-- End Single Service -->
-                </div>
+
             </div>
         </div>
     </section>
@@ -1131,6 +1173,40 @@
 					}
 			}
 	</script> --}}
+    <script>
+        function showAlert(messageId, elementId, event) {
+            var messageElement = document.getElementById(elementId);
+
+            // Set initial opacity to 0
+            messageElement.style.opacity = 0;
+
+            // Show the message container
+            document.querySelector('.message-container').style.display = 'block';
+
+            // Hide all messages
+            document.querySelectorAll('.message').forEach(function (msg) {
+                msg.style.display = 'none';
+            });
+
+            // Show the selected message
+            messageElement.style.display = 'block';
+
+            // Remove 'active' class from all list items
+            document.querySelectorAll('.list-group-item').forEach(function (item) {
+                item.classList.remove('active');
+            });
+
+            // Add 'active' class to the clicked list item
+            event.target.closest('.list-group-item').classList.add('active');
+
+            setTimeout(function () {
+                // Gradually increase opacity to 1
+                messageElement.style.opacity = 1;
+            }, 500);
+        }
+    </script>
+
+
 </body>
 
 </html>
