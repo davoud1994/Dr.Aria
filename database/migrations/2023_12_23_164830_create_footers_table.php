@@ -14,7 +14,10 @@ return new class extends Migration
         Schema::create('footers', function (Blueprint $table) {
             $table->id();
             $table->string('About_we');
-            $table->string('Links');
+            $table->string('L_questions');
+            $table->string('L_articles');
+            $table->string('L_services');
+            $table->string('L_home');
             $table->string('Address');
             $table->timestamps();
         });

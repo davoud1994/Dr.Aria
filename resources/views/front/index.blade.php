@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>اریا دکتر-نوبت دهی انلاین</title>
+    <title>اریا دکتر-فروش نرم افزار</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/logo.png">
@@ -51,29 +51,40 @@
         body {
             scroll-behavior: smooth;
         }
+        iframe{
+            height: 300px;
+
+        }
+
+        .one{
+            border-width: 100px;
+            border-style:dashed;
+            border-color: rgb(117, 92, 79);
+        }
 
         #main_list_group {
             display: flex;
             flex-direction: row-reverse;
             flex-wrap: wrap;
             margin-bottom: 30px;
+
         }
 
 
 
         .list-group-item {
             cursor: pointer;
-            position: relative;
-            overflow: hidden;
+            /* position: relative; */
+            /* overflow: hidden; */
             transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out;
             background-color: #0080ff36;
-
-
+            /* padding: 30px,30px; */
+            border-width: 5px 5px 5px;
         }
 
 
         .list-group-item::before {
-            border-radius: 100px;
+            /* border-radius: 100px; */
             content: '';
             position: absolute;
             left: 50%;
@@ -229,12 +240,12 @@
                                         <li><a href="#">مقالات </i></a>
 
                                         </li>
-                                        <li><a id="office">اداری<i class="icofont-rounded-down"></i></a>
-                                            <ul class="dropdown">
+                                        {{-- <li><a id="office">اداری<i class="icofont-rounded-down"></i></a> --}}
+                                        {{-- <ul class="dropdown">
                                                 <li><a href="blog-single.html" id='job1'>رزومه افراد</a></li>
                                                 <li><a href="blog-single.html" id='job1'>استخدام</a></li>
-                                            </ul>
-                                            {{-- <ul class="dropdown">
+                                            </ul> --}}
+                                        {{-- <ul class="dropdown">
 													<li><a href="blog-single.html">تماس با ما</a></li>
 													<li><a href="blog-single.html">رزومه افراد</a></li>
 													<li><a href="blog-single.html">استخدام</a></li>
@@ -327,54 +338,57 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-12 ">
                         <!-- single-schedule -->
-                        <div class="single-schedule first">
+                        <div class="single-schedule first" style="text-align: right">
                             <div class="inner">
                                 <div class="icon">
                                     <i class="fa fa-ambulance"></i>
                                 </div>
                                 <div class="single-content">
-                                    <span>Lorem Amet</span>
-                                    <h4>Emergency Cases</h4>
-                                    <p>Lorem ipsum sit amet consectetur adipiscing elit. Vivamus et erat in lacus
-                                        convallis sodales.</p>
-                                    <a href="#">LEARN MORE<i class="fa fa-long-arrow-right"></i></a>
+                                    <span></span>
+                                    <h4>پشتیبانی </h4>
+                                    <p>شما میتوانید همواره در طول هفته از <br>ساعت ۹صبح تا ۱۹ با واحد پشتیبانی <br>نرم
+                                        افزار پزشکی آریا دکتر در ارتباط باشید.
+                                    </p>
+                                    <a href="#"> اطلاعات بیشتر<i class="fa fa-long-arrow-left"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-12">
                         <!-- single-schedule -->
-                        <div class="single-schedule middle">
+                        <div class="single-schedule middle" style="text-align: right">
                             <div class="inner">
                                 <div class="icon">
                                     <i class="icofont-prescription"></i>
                                 </div>
                                 <div class="single-content">
-                                    <span>Fusce Porttitor</span>
-                                    <h4>Doctors Timetable</h4>
+                                    <span> </span>
+                                    <h4> وجه تمایز</h4>
                                     <p>Lorem ipsum sit amet consectetur adipiscing elit. Vivamus et erat in lacus
                                         convallis sodales.</p>
-                                    <a href="#">LEARN MORE<i class="fa fa-long-arrow-right"></i></a>
+                                    <a href="#">اطلاعات بیشتر<i class="fa fa-long-arrow-left"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-12 col-12">
+                    <div class="col-lg-4 col-md-12 col-12" dir="rtl">
                         <!-- single-schedule -->
-                        <div class="single-schedule last">
+                        <div class="single-schedule last" style="text-align: right">
                             <div class="inner">
                                 <div class="icon">
                                     <i class="icofont-ui-clock"></i>
                                 </div>
                                 <div class="single-content">
-                                    <span>Donec luctus</span>
-                                    <h4>Opening Hours</h4>
-                                    <ul class="time-sidual">
-                                        <li class="day">Monday - Fridayp <span>8.00-20.00</span></li>
-                                        <li class="day">Saturday <span>9.00-18.30</span></li>
-                                        <li class="day">Monday - Thusday <span>9.00-15.00</span></li>
+                                    {{-- <span>Donec luctus</span> --}}
+                                    <h4> ساعت کار شرکت</h4>
+                                    <ul class="time-sidual" style="text-align: right;margin-bottom:7px">
+                                        <li class="day">شنبه - چهارشنبه 20.00-8.00</li>
+
+                                        {{-- <li class="day">Saturday <span>9.00-18.30</span></li> --}}
+                                        <li class="day">پنجشنبه - جمعه تعطیل</li>
                                     </ul>
-                                    <a href="#">LEARN MORE<i class="fa fa-long-arrow-right"></i></a>
+                                    <a href="#"style="text-align: right;margin-top:45px"><i
+                                            class="fa fa-long-arrow-left"></i>اطلاعات بیشتر </a>
                                 </div>
                             </div>
                         </div>
@@ -591,37 +605,37 @@
                 <div class="col-lg-12 col-12">
                     <div class="owl-carousel portfolio-slider">
                         <div class="single-pf">
-                            <img src="img/pf1.jpg" alt="#">
+                            <img src="img\img_index (1).jpg" alt="#">
                             <a href="portfolio-details.html" class="btn">View Details</a>
                         </div>
                         <div class="single-pf">
+                            <img src="img\img_index (2).jpg" alt="#">
+                            <a href="portfolio-details.html" class="btn">View Details</a>
+                        </div>
+                        <div class="single-pf">
+                            <img src="img\img_index (3).jpg" alt="#">
+                            <a href="portfolio-details.html" class="btn">View Details</a>
+                        </div>
+                        <div class="single-pf">
+                            <img src="img\img_index (4).jpg" alt="#">
+                            <a href="portfolio-details.html" class="btn">View Details</a>
+                        </div>
+                        <div class="single-pf">
+                            <img src="img\img_index.jpg" alt="#">
+                            <a href="portfolio-details.html" class="btn">View Details</a>
+                        </div>
+                        {{-- <div class="single-pf">
                             <img src="img/pf2.jpg" alt="#">
                             <a href="portfolio-details.html" class="btn">View Details</a>
                         </div>
                         <div class="single-pf">
                             <img src="img/pf3.jpg" alt="#">
                             <a href="portfolio-details.html" class="btn">View Details</a>
-                        </div>
-                        <div class="single-pf">
+                        </div> --}}
+                        {{-- <div class="single-pf">
                             <img src="img/pf4.jpg" alt="#">
                             <a href="portfolio-details.html" class="btn">View Details</a>
-                        </div>
-                        <div class="single-pf">
-                            <img src="img/pf1.jpg" alt="#">
-                            <a href="portfolio-details.html" class="btn">View Details</a>
-                        </div>
-                        <div class="single-pf">
-                            <img src="img/pf2.jpg" alt="#">
-                            <a href="portfolio-details.html" class="btn">View Details</a>
-                        </div>
-                        <div class="single-pf">
-                            <img src="img/pf3.jpg" alt="#">
-                            <a href="portfolio-details.html" class="btn">View Details</a>
-                        </div>
-                        <div class="single-pf">
-                            <img src="img/pf4.jpg" alt="#">
-                            <a href="portfolio-details.html" class="btn">View Details</a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -1019,9 +1033,13 @@
                         <div class="single-footer">
                             <h2>درباره ما</h2>
 
-                         
-                                <p>{{$info1}}</p>
-                          
+                            @foreach ($info_footer as $item)
+                                <p>{{ $item->About_we }} </p>
+                            @endforeach
+
+
+
+
 
 
                             {{-- <p>
@@ -1051,11 +1069,24 @@
                         <div class="single-footer f-link">
                             <h2>لینک های مهم</h2>
                             <div class="row">
-                                <div class="col-lg-20 col-md-20">
+                                <div class="col-lg-8 col-md-8" style="margin-left: 160px">
                                     <ul class='import-links-footer'>
-                                        @foreach ($info2 as $item)
+                                        {{-- @foreach ($info2 as $item)
                                             <li><a href="#"><i class="fa fa-caret-left"aria-hidden="true"></i>
                                                     {{ $item->Links }}</a></li>
+                                        @endforeach --}}
+
+                                        @foreach ($info_footer as $item)
+                                            <li><a href="#"><i class="fa fa-caret-left"
+                                                    aria-hidden="true"></i>
+                                                    {{ $item->L_questions }}</a></li>
+
+                                            <li><a href="#"><i class="fa fa-caret-left"aria-hidden="true"></i>
+                                                    {{ $item->L_articles }}</a></li>
+                                            <li><a href="#"><i class="fa fa-caret-left"aria-hidden="true"></i>
+                                                    {{ $item->L_services }}</a></li>
+                                            <li><a href="#"><i class="fa fa-caret-left"aria-hidden="true"></i>
+                                                    {{ $item->L_home }}</a></li>
                                         @endforeach
                                     </ul>
                                 </div>
@@ -1080,10 +1111,12 @@
                         <div class="single-footer">
 
                             <h2>آدرس شرکت</h2>
-                            
-                                <p>{{$info3}}</p>  
-                            
-                          
+                            {{--
+                                <p>{{$info3}}</p> --}}
+                            @foreach ($info_footer as $item)
+                                <p>{{ $item->Address }}</p>
+                            @endforeach
+
                             {{-- <ul class="time-sidual">
                                 <li class="day">Monday - Fridayp <span>8.00-20.00</span></li>
                                 <li class="day">Saturday <span>9.00-18.30</span></li>
@@ -1091,17 +1124,13 @@
                             </ul> --}}
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-12">
+                    <div class="col-lg-3 col-md-3 col-12">
                         <div class="single-footer">
-                            {{-- <h2>Newsletter</h2>
-                            <p>subscribe to our newsletter to get allour news in your inbox.. Lorem ipsum dolor sit
-                                amet, consectetur adipisicing elit,</p>
-                            <form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
-                                <input name="email" placeholder="Email Address" class="common-input"
-                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your email address'"
-                                    required="" type="email">
-                                <button class="button"><i class="icofont icofont-paper-plane"></i></button> --}}
-                            {{-- </form> --}}
+                            <h2>موقعیت شرکت</h2>
+                            <div calss='one'>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d819.1012256472928!2d48.52088922528803!3d34.79575377053601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1703580482624!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                              </div>
+
                         </div>
                     </div>
                 </div>
@@ -1114,8 +1143,10 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="copyright-content">
-                            <p>© Copyright 2018 | All Rights Reserved by <a href="https://www.wpthemesgrid.com"
-                                    target="_blank">wpthemesgrid.com</a> </p>
+                            <p>© کلیه حقوق سایت آریا دکتر برای شرکت فناواران آویژه محفوظ است
+                                {{-- <a href="https://www.wpthemesgrid.com"
+                                    target="_blank">wpthemesgrid.com</a> </p> --}}
+
                         </div>
                     </div>
                 </div>
