@@ -54,7 +54,7 @@ Version:	1.1
 #button-rigester,#button-enter{
 	font-weight:bold;
 	color:white;
-	margin-button:0px;
+	margin-bottom:0px;
 
 }
 #tel-email{
@@ -76,6 +76,18 @@ Version:	1.1
     }
 
 
+
+#doctors{
+    display: flex;
+    flex-direction: column;
+
+}
+
+#one{
+    background-repeat: no-repeat;
+    background-size:auto;
+
+}
 
 
 /* ===============================* */
@@ -970,12 +982,12 @@ Version:	1.1
 	background-size:cover;
 	background-repeat:no-repeat;
 }
-.fun-facts .single-fun {
+/* .fun-facts .single-fun {
 
-}
+} */
 .fun-facts .single-fun i {
 	position: absolute;
-	left: 0;
+	left: 0px;
 	font-size: 62px;
 	color: #fff;
 	height: 70px;
@@ -987,8 +999,9 @@ Version:	1.1
 	margin: 0;
 	border: 2px solid #fff;
 	border-radius: 0px;
-	top: 50%;
-	margin-top: -35px;
+	top: 75%;
+	margin-top: -52px;
+
 	-webkit-transition: all 0.4s ease;
 	-moz-transition: all 0.4s ease;
 	transition: all 0.4s ease;
@@ -1682,12 +1695,13 @@ Version:	1.1
 }
 .pricing-table .single-table {
 	background: #fff;
-	border:1px solid #ddd;
+	border:2px solid #a5e0fc;
 	text-align: center;
 	position: relative;
 	overflow: hidden;
 	margin: 15px 0;
 	padding:45px 35px 30px 35px;
+    border-radius: 10px;
 }
 /* Table Head */
 .pricing-table .single-table .table-head {
@@ -1696,6 +1710,7 @@ Version:	1.1
 .pricing-table .single-table .icon i{
 	font-size:65px;
 	color:#1a76d1;
+
 }
 .pricing-table .single-table .title {
 	font-size: 21px;
@@ -1717,9 +1732,11 @@ Version:	1.1
 }
 /* Table List */
 .pricing-table .single-table .table-list {
-	padding: 10px 0;
-	text-align: left;
+	padding: 10px 10px;
+	text-align: center;
 	margin-top: 30px;
+
+
 }
 .pricing-table .table-list li {
 	position: relative;
@@ -1727,6 +1744,7 @@ Version:	1.1
 	text-transform: capitalize;
 	margin-bottom: 18px;
 	padding-right: 32px;
+    color: black;
 }
 .pricing-table .table-list li:last-child{
 	margin-bottom:0px;
@@ -1757,7 +1775,7 @@ Version:	1.1
 .pricing-table .btn {
 	padding: 12px 25px;
 	width: 100%;
-	color:#fff;
+	color:#000000;
 }
 .pricing-table .btn:before{
 	background:#2C2D3F;
@@ -2086,7 +2104,7 @@ Version:	1.1
 	overflow:hidden;
 }
 .blog .single-news .news-content {
-	text-align: left;
+	text-align: right;
 	background: #fff;
 	z-index: 99;
 	position: relative;

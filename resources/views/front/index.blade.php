@@ -232,7 +232,7 @@
                                         </li>
                                         <li><a href="#">پزشکان </a></li>
                                         <li><a href="#products">محصولات</a></li>
-                                        <li><a href="#">اخبار</i></a>
+                                        <li><a href="#news">اخبار</i></a>
                                             {{-- <ul class="dropdown">
 													<li><a href="404.html">404 Error</a></li>
 												</ul> --}}
@@ -347,9 +347,9 @@
                                     <span></span>
                                     <h4>پشتیبانی </h4>
                                     <p>شما میتوانید همواره در طول هفته از <br>ساعت ۹صبح تا ۱۹ با واحد پشتیبانی <br>نرم
-                                        افزار پزشکی آریا دکتر در ارتباط باشید.
+                                        افزار پزشکی آریا دکتر در ارتباط باشید
                                     </p>
-                                    <a href="#"> اطلاعات بیشتر<i class="fa fa-long-arrow-left"></i></a>
+                                    {{-- <a href="#"> اطلاعات بیشتر<i class="fa fa-long-arrow-left"></i></a> --}}
                                 </div>
                             </div>
                         </div>
@@ -363,10 +363,10 @@
                                 </div>
                                 <div class="single-content">
                                     <span> </span>
-                                    <h4> وجه تمایز</h4>
-                                    <p>Lorem ipsum sit amet consectetur adipiscing elit. Vivamus et erat in lacus
-                                        convallis sodales.</p>
-                                    <a href="#">اطلاعات بیشتر<i class="fa fa-long-arrow-left"></i></a>
+                                    <h4>ویژگی های محصولات ما</h4>
+                        <p>دسترسی سریع به پزشک مورد نظر خود , امنیت بالا و پشتیبانی فعال از ویژ گیهای ممتاز محصولات ما میباشد</p>
+
+                                    {{-- <a href="#">اطلاعات بیشتر<i class="fa fa-long-arrow-left"></i></a> --}}
                                 </div>
                             </div>
                         </div>
@@ -381,14 +381,14 @@
                                 <div class="single-content">
                                     {{-- <span>Donec luctus</span> --}}
                                     <h4> ساعت کار شرکت</h4>
-                                    <ul class="time-sidual" style="text-align: right;margin-bottom:7px">
+                                    <ul class="time-sidual" style="text-align: right;margin-bottom:27px">
                                         <li class="day">شنبه - چهارشنبه 20.00-8.00</li>
 
                                         {{-- <li class="day">Saturday <span>9.00-18.30</span></li> --}}
                                         <li class="day">پنجشنبه - جمعه تعطیل</li>
                                     </ul>
-                                    <a href="#"style="text-align: right;margin-top:45px"><i
-                                            class="fa fa-long-arrow-left"></i>اطلاعات بیشتر </a>
+                                    {{-- <a href="#"style="text-align: right;margin-top:45px"><i
+                                            class="fa fa-long-arrow-left"></i>اطلاعات بیشتر </a> --}}
                                 </div>
                             </div>
                         </div>
@@ -400,7 +400,7 @@
     <!--/End Start schedule Area -->
 
     <!-- Start Feautes -->
-    <section class="Feautes section">
+    {{-- <section class="Feautes section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -448,63 +448,14 @@
             </div>
         </div>
     </section>
-    <!--/ End Feautes -->
+    <!--/ End Feautes --> --}}
 
     <!-- Start Fun-facts -->
-    <div id="fun-facts" class="fun-facts section overlay">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-12">
-                    <!-- Start Single Fun -->
-                    <div class="single-fun">
-                        <i class="icofont icofont-home"></i>
-                        <div class="content">
-                            <span class="counter">3468</span>
-                            <p>Hospital Rooms</p>
-                        </div>
-                    </div>
-                    <!-- End Single Fun -->
-                </div>
-                <div class="col-lg-3 col-md-6 col-12">
-                    <!-- Start Single Fun -->
-                    <div class="single-fun">
-                        <i class="icofont icofont-user-alt-3"></i>
-                        <div class="content">
-                            <span class="counter">557</span>
-                            <p>Specialist Doctors</p>
-                        </div>
-                    </div>
-                    <!-- End Single Fun -->
-                </div>
-                <div class="col-lg-3 col-md-6 col-12">
-                    <!-- Start Single Fun -->
-                    <div class="single-fun">
-                        <i class="icofont-simple-smile"></i>
-                        <div class="content">
-                            <span class="counter">4379</span>
-                            <p>Happy Patients</p>
-                        </div>
-                    </div>
-                    <!-- End Single Fun -->
-                </div>
-                <div class="col-lg-3 col-md-6 col-12">
-                    <!-- Start Single Fun -->
-                    <div class="single-fun">
-                        <i class="icofont icofont-table"></i>
-                        <div class="content">
-                            <span class="counter">32</span>
-                            <p>Years of Experience</p>
-                        </div>
-                    </div>
-                    <!-- End Single Fun -->
-                </div>
-            </div>
-        </div>
-    </div>
+
     <!--/ End Fun-facts -->
 
     <!-- Start Why choose -->
-    <section class="why-choose section">
+    {{-- <section class="why-choose section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -564,11 +515,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!--/ End Why choose -->
 
     <!-- Start Call to action -->
-    <section class="call-action overlay" data-stellar-background-ratio="0.5">
+    {{-- <section class="call-action overlay" data-stellar-background-ratio="0.5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-12">
@@ -585,10 +536,10 @@
             </div>
         </div>
     </section>
-    <!--/ End Call to action -->
+    <!--/ End Call to action --> --}}
 
     <!-- Start portfolio -->
-    <section class="portfolio section">
+    {{-- <section class="portfolio section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -599,31 +550,74 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="container-fluid">
+        </div> --}}
+        {{-- <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12 col-12">
                     <div class="owl-carousel portfolio-slider">
                         <div class="single-pf">
                             <img src="img\img_index (1).jpg" alt="#">
                             <a href="portfolio-details.html" class="btn">View Details</a>
+                            <div class='text-center mt-3' id='doctors'>
+
+                                <div class="fa fa-user"></div>
+                                <span >پزشک محمد صادق صبا</span>
+
+                                <div class="fa fa-ambulance"></div>
+                                <span >متخصص بیماری های کودکان</span>
+                            </div>
                         </div>
                         <div class="single-pf">
                             <img src="img\img_index (2).jpg" alt="#">
                             <a href="portfolio-details.html" class="btn">View Details</a>
+                        <div class='text-center mt-3' id='doctors'>
+                            <div class="fa fa-user"></div>
+                            <span >دکتر</span>
+
+                            <div class="fa fa-ambulance"></div>
+                            <span >دکتر</span>
+
+                        </div>
+
                         </div>
                         <div class="single-pf">
                             <img src="img\img_index (3).jpg" alt="#">
                             <a href="portfolio-details.html" class="btn">View Details</a>
+                            <div class='text-center mt-3' id='doctors'>
+
+                                <div class="fa fa-user"></div>
+                                <span >دکتر</span>
+
+                                <div class="fa fa-ambulance"></div>
+                                <span >دکتر</span>
+
+                            </div>
                         </div>
                         <div class="single-pf">
                             <img src="img\img_index (4).jpg" alt="#">
                             <a href="portfolio-details.html" class="btn">View Details</a>
+                            <div class='text-center mt-3' id='doctors'>
+
+                                <div class="fa fa-user"></div>
+                                <span >دکتر</span>
+
+                                <div class="fa fa-ambulance"></div>
+                                <span >دکتر</span>
+
+                            </div>
                         </div>
                         <div class="single-pf">
                             <img src="img\img_index.jpg" alt="#">
                             <a href="portfolio-details.html" class="btn">View Details</a>
-                        </div>
+                            <div class='text-center mt-3' id='doctors'>
+
+                                <div class="fa fa-user"></div>
+                                <span >دکتر</span>
+
+                                <div class="fa fa-ambulance"></div>
+                                <span >دکتر</span>
+                            </div>
+                        </div> --}}
                         {{-- <div class="single-pf">
                             <img src="img/pf2.jpg" alt="#">
                             <a href="portfolio-details.html" class="btn">View Details</a>
@@ -636,15 +630,15 @@
                             <img src="img/pf4.jpg" alt="#">
                             <a href="portfolio-details.html" class="btn">View Details</a>
                         </div> --}}
-                    </div>
+                    {{-- </div>
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!--/ End portfolio -->
 
     <!-- Start service -->
-    <section class="services section">
+    {{-- <section class="services section">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
@@ -678,7 +672,7 @@
                             <div class="message" id="message3">محتوای ایتم 4</div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- End Single Service -->
             </div>
 
@@ -688,41 +682,43 @@
     <!--/ End service -->
 
     <!-- Pricing Table -->
-    <section class="pricing-table section" id="products">
+ {{--  background-repeat: no-repeat;background-size: cover;" --}}
+    <section class="pricing-table section" id="products" style="padding-top: 0px;">
+
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
+            <div class="row" >
+                <div class="col-lg-12" style="margin-top: 0px;">
+                    <div class="section-title" >
                         <h2>لیست محصولات ما</h2>
                         <img src="img/section-img.png" alt="#">
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
+                        {{-- <p>دسترسی سریع به پزشک مورد نظر خود وامنیت بالا وپشتیبانی فعال از ویژ گی های ممتاز محصولات ما میباشد</p> --}}
                     </div>
                 </div>
             </div>
             <div class="row">
                 <!-- Single Table -->
                 <div class="col-lg-4 col-md-12 col-12">
-                    <div class="single-table">
+                    <div class="single-table"  >
                         <!-- Table Head -->
                         <div class="table-head">
                             <div class="icon">
-                                <i class="icofont icofont-ui-cut"></i>
+                                <i class="icofont icofont-tooth" style="color: #bf8970" ></i>
                             </div>
-                            <h4 class="title">Plastic Suggery</h4>
+                            <h4 class="title">طرح برنزی</h4>
                             <div class="price">
-                                <p class="amount">$199<span>/ Per Visit</span></p>
+                                {{-- <p class="amount">$199<span>/ Per Visit</span></p> --}}
                             </div>
                         </div>
                         <!-- Table List -->
-                        <ul class="table-list">
-                            <li><i class="icofont icofont-ui-check"></i>Lorem ipsum dolor sit</li>
-                            <li><i class="icofont icofont-ui-check"></i>Cubitur sollicitudin fentum</li>
-                            <li class="cross"><i class="icofont icofont-ui-close"></i>Nullam interdum enim</li>
-                            <li class="cross"><i class="icofont icofont-ui-close"></i>Donec ultricies metus</li>
-                            <li class="cross"><i class="icofont icofont-ui-close"></i>Pellentesque eget nibh</li>
+                        <ul class="table-list" style="color: black">
+                            <li ><i class="icofont icofont-ui-check" style="background-color: #bf8970" ></i>مدیرت مالی و پرونده  بیماران در مطب</li>
+                            <li><i class="icofont icofont-ui-check" style="background-color: #bf8970"  ></i>مدیریت تصاویر رادیو گرافی بیماران در پرونده</li>
+                            <li ><i class="icofont icofont-ui-check" style="background-color: #bf8970"  ></i>قابلیت ثبت ملاحظات  ویژه درمانی به تفکیک هر درمان</li>
+                            <li ><i class="icofont icofont-ui-check" style="background-color: #bf8970" ></i>قابلیت گزارش گیری مالی ;بدهی و پرداختی بیماران</li>
+                            <li ><i class="icofont icofont-ui-check"style="background-color: #bf8970"  ></i>قابلیت ارتباط ثبت الکترونیکی دارو و <br>رادیو گرافی با بیمه ها</li>
                         </ul>
                         <div class="table-bottom">
-                            <a class="btn" href="#">Book Now</a>
+                            <a class="btn" href="#" style="background-color: #bf8970 ;font-weight:bold;" >اطلاعات تکمیلی</a>
                         </div>
                         <!-- Table Bottom -->
                     </div>
@@ -730,27 +726,27 @@
                 <!-- End Single Table-->
                 <!-- Single Table -->
                 <div class="col-lg-4 col-md-12 col-12">
-                    <div class="single-table">
+                    <div class="single-table" >
                         <!-- Table Head -->
                         <div class="table-head">
                             <div class="icon">
-                                <i class="icofont icofont-tooth"></i>
+                                <i class="icofont icofont-ui-cut" style="color: #c0c0c0"></i>
                             </div>
-                            <h4 class="title">Teeth Whitening</h4>
+                            <h4 class="title">طرح نقره ای</h4>
                             <div class="price">
-                                <p class="amount">$299<span>/ Per Visit</span></p>
+                                {{-- <p class="amount">$299<span>/ Per Visit</span></p> --}}
                             </div>
                         </div>
                         <!-- Table List -->
                         <ul class="table-list">
-                            <li><i class="icofont icofont-ui-check"></i>Lorem ipsum dolor sit</li>
-                            <li><i class="icofont icofont-ui-check"></i>Cubitur sollicitudin fentum</li>
-                            <li><i class="icofont icofont-ui-check"></i>Nullam interdum enim</li>
-                            <li class="cross"><i class="icofont icofont-ui-close"></i>Donec ultricies metus</li>
-                            <li class="cross"><i class="icofont icofont-ui-close"></i>Pellentesque eget nibh</li>
+                            <li ><i class="icofont icofont-ui-check" style="background-color: #c0c0c0"></i>دارا بودن تمام قابلیت های پک برنزی</li>
+                            <li><i class="icofont icofont-ui-check" style="background-color: #c0c0c0"></i>دارا بودن بخش تشخیص و تعیین  یادداشت های هر پرونده</li>
+                            <li><i class="icofont icofont-ui-check" style="background-color: #c0c0c0"></i>امکان تغییرات پذیرش به شیوه مطب بصورت اختصاصی</li>
+                            <li><i class="icofont icofont-ui-check"style="background-color: #c0c0c0" ></i>قابلیت گروه بندی درمان و ترتیب الویت نمایش هر بخش</li>
+                            <li><i class="icofont icofont-ui-check" style="background-color: #c0c0c0"></i>قابلیت ارتباط با قلم نوری جهت ثبت مراحل ویزیت</li>
                         </ul>
                         <div class="table-bottom">
-                            <a class="btn" href="#">Book Now</a>
+                            <a class="btn" href="#" style="background-color: #c0c0c0">اطلاعات تکمیلی</a>
                         </div>
                         <!-- Table Bottom -->
                     </div>
@@ -758,27 +754,27 @@
                 <!-- End Single Table-->
                 <!-- Single Table -->
                 <div class="col-lg-4 col-md-12 col-12">
-                    <div class="single-table">
+                    <div class="single-table " >
                         <!-- Table Head -->
                         <div class="table-head">
                             <div class="icon">
-                                <i class="icofont-heart-beat"></i>
+                                <i class="icofont-heart-beat" style="color:#ffe75a"></i>
                             </div>
-                            <h4 class="title">Heart Suggery</h4>
+                            <h4 class="title">طرح طلایی</h4>
                             <div class="price">
-                                <p class="amount">$399<span>/ Per Visit</span></p>
+                                {{-- <p class="amount">$399<span>/ Per Visit</span></p> --}}
                             </div>
                         </div>
                         <!-- Table List -->
                         <ul class="table-list">
-                            <li><i class="icofont icofont-ui-check"></i>Lorem ipsum dolor sit</li>
-                            <li><i class="icofont icofont-ui-check"></i>Cubitur sollicitudin fentum</li>
-                            <li><i class="icofont icofont-ui-check"></i>Nullam interdum enim</li>
-                            <li><i class="icofont icofont-ui-check"></i>Donec ultricies metus</li>
-                            <li><i class="icofont icofont-ui-check"></i>Pellentesque eget nibh</li>
+                            <li><i class="icofont icofont-ui-check" style="background-color:#ffe75a"></i> دارا بودن تمام قابلیت های پک برنزی</li>
+                            <li><i class="icofont icofont-ui-check" style="background-color:#ffe75a"></i>دارا بودن بخش تشخیص و تعیین یادداشت های هر پرونده</li>
+                            <li><i class="icofont icofont-ui-check"style="background-color:#ffe75a" ></i>امکان تغییرات پذیرش به شیوه مطب بصورت اختصاصی</li>
+                            <li><i class="icofont icofont-ui-check"style="background-color:#ffe75a" ></i> قابلیت گروه بندی درمان و ترتیب الویت نمایش هر بخش</li>
+                            <li><i class="icofont icofont-ui-check"style="background-color:#ffe75a"></i>قابلیت ارتباط با قلم نوری جهت ثبت مراحل ویزیت</li>
                         </ul>
                         <div class="table-bottom">
-                            <a class="btn" href="#">Book Now</a>
+                            <a class="btn" href="#" style="background-color:#ffe75a" >اطلاعات تکمیلی</a>
                         </div>
                         <!-- Table Bottom -->
                     </div>
@@ -789,33 +785,82 @@
     </section>
     <!--/ End Pricing Table -->
 
-
+    <div  class="fun-facts section overlay rtl" style="text-align:center;">
+        <div class="container" >
+            <div class="row" >
+                <div class="col-lg-3 col-md-3 col-12">
+                    <!-- Start Single Fun -->
+                    <div class="single-fun" >
+                        <i class="icofont icofont-home"></i>
+                        <div class="content" >
+                            <span class="counter">3468</span>
+                            <p >مراکز فعال</p>
+                        </div>
+                    </div>
+                    <!-- End Single Fun -->
+                </div>
+                <div class="col-lg-3 col-md-3 col-12" >
+                    <!-- Start Single Fun -->
+                    <div class="single-fun" >
+                        <i class="icofont icofont-user-alt-3"></i>
+                        <div class="content">
+                            <span class="counter">557</span>
+                            <p> پزشکان متخصص</p>
+                        </div>
+                    </div>
+                    <!-- End Single Fun -->
+                </div>
+                <div class="col-lg-3 col-md-3 col-12" >
+                    <!-- Start Single Fun -->
+                    <div class="single-fun">
+                        <i class="icofont-simple-smile" ></i>
+                        <div class="content">
+                            <span class="counter">4379</span>
+                            <p>رضایت بیماران</p>
+                        </div>
+                    </div>
+                    <!-- End Single Fun -->
+                </div>
+                <div class="col-lg-3 col-md-3 col-12" >
+                    <!-- Start Single Fun -->
+                    <div class="single-fun" >
+                        <i class="icofont icofont-table" ></i>
+                        <div class="content">
+                            <span class="counter">32</span>
+                            <p>سالهای فعالیت</p>
+                        </div>
+                    </div>
+                    <!-- End Single Fun -->
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Start Blog Area -->
-    <section class="blog section" id="blog">
+    <section class="blog section" id="news"  >
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-12" >
                     <div class="section-title">
-                        <h2>Keep up with Our Most Recent Medical News.</h2>
+                        <h2>با جدیدترین اخبار پزشکی ما همراه باشید</h2>
                         <img src="img/section-img.png" alt="#">
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
+                        {{-- <p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p> --}}
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-6 col-12">
+                <div class="col-lg-4 col-md-6 col-12"  >
                     <!-- Single Blog -->
                     <div class="single-news">
-                        <div class="news-head">
-                            <img src="img/blog1.jpg" alt="#">
+                        <div class="news-head"style="text-align: right">
+                            <img src="img\1604218951_Group 38.jpg" alt="#">
                         </div>
                         <div class="news-body">
                             <div class="news-content">
-                                <div class="date">22 Aug, 2020</div>
-                                <h2><a href="blog-single.html">We have annnocuced our new product.</a></h2>
-                                <p class="text">Lorem ipsum dolor a sit ameti, consectetur adipisicing elit, sed do
-                                    eiusmod tempor incididunt sed do incididunt sed.</p>
+
+                                <div class="date"><i class='icofont-calendar'></i>1399/8/10</div>
+                                <h2><a href="blog-single.html">علائم کبد چرب کدامند؟</a></h2>
+                                <p class="text">در بسیاری از موارد کبد چرب با علائم قابل توجهی همراه نیست. اما ممکن است احساس خستگی کرده و یا احساس ناراحتی یا درد در سمت راست بالای شکم داشته باشید</p>
                             </div>
                         </div>
                     </div>
@@ -825,31 +870,29 @@
                     <!-- Single Blog -->
                     <div class="single-news">
                         <div class="news-head">
-                            <img src="img/blog2.jpg" alt="#">
+                            <img src="img/1604303667_Group 36.jpg" alt="#">
                         </div>
                         <div class="news-body">
                             <div class="news-content">
-                                <div class="date">15 Jul, 2020</div>
-                                <h2><a href="blog-single.html">Top five way for solving teeth problems.</a></h2>
-                                <p class="text">Lorem ipsum dolor a sit ameti, consectetur adipisicing elit, sed do
-                                    eiusmod tempor incididunt sed do incididunt sed.</p>
+                                <div class="date"><i class='icofont-calendar'></i>1399/8/12</div>
+                                <h2><a href="blog-single.html">علائم و نشانه های کمبود کلسیم</a></h2>
+                                <p class="text">کمبود کلسیم، که به عنوان هیپوکلسمی شناخته می شود، یک مشکل سلامتی جهانی است و مردم در سراسر جهان به راحتی کلسیم را از رژیم غذایی خود دریافت نمی کنند</p>
                             </div>
                         </div>
                     </div>
                     <!-- End Single Blog -->
                 </div>
-                <div class="col-lg-4 col-md-6 col-12">
+                <div class="col-lg-4 col-md-6 col-12" >
                     <!-- Single Blog -->
                     <div class="single-news">
                         <div class="news-head">
-                            <img src="img/blog3.jpg" alt="#">
+                            <img src="img/1604303343_Group 31.jpg" alt="#">
                         </div>
-                        <div class="news-body">
+                        <div class="news-body" >
                             <div class="news-content">
-                                <div class="date">05 Jan, 2020</div>
-                                <h2><a href="blog-single.html">We provide highly business soliutions.</a></h2>
-                                <p class="text">Lorem ipsum dolor a sit ameti, consectetur adipisicing elit, sed do
-                                    eiusmod tempor incididunt sed do incididunt sed.</p>
+                                <div class="date"><i class='icofont-calendar'></i>1399/8/12</div>
+                                <h2><a href="blog-single.html">سنگ کلیه</a></h2>
+                                <p class="text">سنگ کلیه تا وقتی حرکت نمی‌کند و ثابت است، هیچ علامتی ندارد. مشکلات از زمانی آغاز می‌گردد که سنگ در کلیه جابه‌جا می‌شود یا به سمت میزنای (لوله‌ای که هر کلیه را به مثانه وصل می‌کند) به راه می‌افتد</p>
                             </div>
                         </div>
                     </div>
@@ -861,7 +904,7 @@
     <!-- End Blog Area -->
 
     <!-- Start clients -->
-    <div class="clients overlay">
+    {{-- <div class="clients overlay">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-12">
@@ -897,9 +940,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!--/Ens clients -->
-
+{{--
     <!-- Start Appointment -->
     <section class="appointment">
         <div class="container">
@@ -1020,7 +1063,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- /End Newsletter Area -->
 
     <!-- Footer Area -->
@@ -1206,7 +1249,7 @@
 					}
 			}
 	</script> --}}
-    <script>
+    {{-- <script>
         function showAlert(messageId, elementId, event) {
             var messageElement = document.getElementById(elementId);
 
@@ -1237,7 +1280,7 @@
                 messageElement.style.opacity = 1;
             }, 500);
         }
-    </script>
+    </script> --}}
 
 
 </body>
