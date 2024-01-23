@@ -455,22 +455,22 @@
     <!--/ End Fun-facts -->
 
     <!-- Start Why choose -->
-    {{-- <section class="why-choose section">
+    <section class="why-choose section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h2>We Offer Different Services To Improve Your Health</h2>
+                        <h2>ویدیو آموزشی و آشنایی با خدمات مجموعه</h2>
                         <img src="img/section-img.png" alt="#">
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
+                        {{-- <p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p> --}}
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-6 col-12">
                     <!-- Start Choose Left -->
-                    <div class="choose-left">
-                        <h3>Who We Are</h3>
+                    <div class="choose-left" >
+                        <h3> ما که هستیم</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pharetra antege vel est
                             lobortis, a commodo magna rhoncus. In quis nisi non emet quam pharetra commodo. </p>
                         <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
@@ -478,16 +478,16 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <ul class="list">
-                                    <li><i class="fa fa-caret-right"></i>Maecenas vitae luctus nibh. </li>
-                                    <li><i class="fa fa-caret-right"></i>Duis massa massa.</li>
-                                    <li><i class="fa fa-caret-right"></i>Aliquam feugiat interdum.</li>
+                                    <li>Maecenas vitae luctus nibh.<i class="fa fa-caret-left"></i> </li>
+                                    <li>Duis massa massa.<i class="fa fa-caret-left"></i></li>
+                                    <li>Aliquam feugiat interdum.<i class="fa fa-caret-left"></i></li>
                                 </ul>
                             </div>
                             <div class="col-lg-6">
                                 <ul class="list">
-                                    <li><i class="fa fa-caret-right"></i>Maecenas vitae luctus nibh. </li>
-                                    <li><i class="fa fa-caret-right"></i>Duis massa massa.</li>
-                                    <li><i class="fa fa-caret-right"></i>Aliquam feugiat interdum.</li>
+                                    <li>Maecenas vitae luctus nibh. <i class="fa fa-caret-left"></i></li>
+                                    <li> massa Duismassa.<i class="fa fa-caret-left"></i></li>
+                                    <li>Aliquam feugiat interdum.<i class="fa fa-caret-left"></i></li>
                                 </ul>
                             </div>
                         </div>
@@ -499,23 +499,26 @@
                     <div class="choose-right">
                         <div class="video-image">
                             <!-- Video Animation -->
-                            <div class="promo-video">
+                          {{-- <div class="promo-video">
                                 <div class="waves-block">
                                     <div class="waves wave-1"></div>
                                     <div class="waves wave-2"></div>
                                     <div class="waves wave-3"></div>
                                 </div>
-                            </div>
+                            </div>  --}}
                             <!--/ End Video Animation -->
-                            <a href="https://www.youtube.com/watch?v=RFVXy6CRVR4"
-                                class="video video-popup mfp-iframe"><i class="fa fa-play"></i></a>
+                            {{-- <a href="https://www.youtube.com/watch?v=RFVXy6CRVR4"
+                                class="video video-popup mfp-iframe"><i class="fa fa-play"></i></a> --}}
+                                <video controls class='vedio'  >
+                                    <source src='{{url("#")}}' type="video/mp4">
+                                </video>
                         </div>
                     </div>
                     <!-- End Choose Rights -->
                 </div>
             </div>
         </div>
-    </section> --}}
+    </section> 
     <!--/ End Why choose -->
 
     <!-- Start Call to action -->
@@ -702,7 +705,7 @@
                         <!-- Table Head -->
                         <div class="table-head">
                             <div class="icon">
-                                <i class="icofont icofont-tooth" style="color: #bf8970" ></i>
+                                <i class="icofont icofont-tooth" style="color: #e6895e" ></i>
                             </div>
                             <h4 class="title">طرح برنزی</h4>
                             <div class="price">
@@ -711,14 +714,14 @@
                         </div>
                         <!-- Table List -->
                         <ul class="table-list" style="color: black">
-                            <li ><i class="icofont icofont-ui-check" style="background-color: #bf8970" ></i>مدیرت مالی و پرونده  بیماران در مطب</li>
+                            <li ><i class="icofont icofont-ui-check" style="background-color: #ee7d49" ></i>مدیرت مالی و پرونده  بیماران در مطب</li>
                             <li><i class="icofont icofont-ui-check" style="background-color: #bf8970"  ></i>مدیریت تصاویر رادیو گرافی بیماران در پرونده</li>
                             <li ><i class="icofont icofont-ui-check" style="background-color: #bf8970"  ></i>قابلیت ثبت ملاحظات  ویژه درمانی به تفکیک هر درمان</li>
                             <li ><i class="icofont icofont-ui-check" style="background-color: #bf8970" ></i>قابلیت گزارش گیری مالی ;بدهی و پرداختی بیماران</li>
                             <li ><i class="icofont icofont-ui-check"style="background-color: #bf8970"  ></i>قابلیت ارتباط ثبت الکترونیکی دارو و <br>رادیو گرافی با بیمه ها</li>
                         </ul>
                         <div class="table-bottom">
-                            <a class="btn" href="#" style="background-color: #bf8970 ;font-weight:bold;" >اطلاعات تکمیلی</a>
+                            <a class="btn" href="{{route('orders')}}" style="background-color: #bf8970 ;font-weight:bold;" >مشاوره و ارائه خدمات </a>
                         </div>
                         <!-- Table Bottom -->
                     </div>
@@ -746,7 +749,7 @@
                             <li><i class="icofont icofont-ui-check" style="background-color: #c0c0c0"></i>قابلیت ارتباط با قلم نوری جهت ثبت مراحل ویزیت</li>
                         </ul>
                         <div class="table-bottom">
-                            <a class="btn" href="#" style="background-color: #c0c0c0">اطلاعات تکمیلی</a>
+                            <a class="btn" href="{{route('orders')}}" style="background-color: #c0c0c0"> مشاوره و ارائه خدمات</a>
                         </div>
                         <!-- Table Bottom -->
                     </div>
@@ -774,7 +777,7 @@
                             <li><i class="icofont icofont-ui-check"style="background-color:#ffe75a"></i>قابلیت ارتباط با قلم نوری جهت ثبت مراحل ویزیت</li>
                         </ul>
                         <div class="table-bottom">
-                            <a class="btn" href="#" style="background-color:#ffe75a" >اطلاعات تکمیلی</a>
+                            <a class="btn" href="{{route('orders')}}" style="background-color:#ffe75a" > مشاوره و ارائه خدمات</a>
                         </div>
                         <!-- Table Bottom -->
                     </div>
@@ -785,7 +788,7 @@
     </section>
     <!--/ End Pricing Table -->
 
-    <div  class="fun-facts section overlay rtl" style="text-align:center;">
+    {{-- <div  class="fun-facts section overlay rtl" style="text-align:center;">
         <div class="container" >
             <div class="row" >
                 <div class="col-lg-3 col-md-3 col-12">
@@ -834,7 +837,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <!-- Start Blog Area -->
     <section class="blog section" id="news"  >
@@ -1240,7 +1243,7 @@
 		<!-- Main JS -->
 		<script src="js/main.js"></script> --}}
     @vite('resources/js/app.js')
-    {{-- <script>
+    <script>
 			// تابع جاوااسکریپت برای حرکت به بخش مورد نظر
 			function scrollToSection(sectionId) {
 					var section = document.getElementById(sectionId);
@@ -1248,7 +1251,7 @@
 							section.scrollIntoView({ behavior: "smooth" });
 					}
 			}
-	</script> --}}
+	</script>
     {{-- <script>
         function showAlert(messageId, elementId, event) {
             var messageElement = document.getElementById(elementId);

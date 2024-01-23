@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +17,8 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/home',[HomeController::class,'Show'])->name('home');
 // Route::get('/home',[HomeController::class,'index'])->name('home');
-   
+
+Route::get('/order',[OrderController::class,'create'])->name('orders');
+Route::post('/order/submit_order',[OrderController::class,'store'])->name('submit_order');
 
 

@@ -649,7 +649,7 @@ Version:	1.1
 =============================*/
 .slider .single-slider {
 	height: 500px;
-	background-size: cover;
+	background-size: contain;
 	background-position: center;
 	background-repeat:no-repeat;
 }
@@ -1038,6 +1038,13 @@ Version:	1.1
 /*===================
 	Why choose CSS
 =====================*/
+.vedio{
+	height: 380px;
+	width: 500px;
+	margin-left:auto;
+}
+
+
 .why-choose .choose-left h3{
 	font-size:24px;
 	font-weight:600;
@@ -1045,11 +1052,12 @@ Version:	1.1
 	position:relative;
 	padding-bottom:20px;
 	margin-bottom:24px;
+	text-align:right;
 }
 .why-choose .choose-left h3:before{
 	position:absolute;
 	content:"";
-	left:0;
+	left:200;
 	bottom:0;
 	height:2px;
 	width:50px;
@@ -1057,11 +1065,13 @@ Version:	1.1
 }
 .why-choose .choose-left p{
 	margin-bottom:35px;
+	text-align:right;
 }
 /* .why-choose .choose-left .list{} */
 .why-choose .choose-left .list li {
 	color: #868686;
 	margin-bottom: 12px;
+	text-align:right;
 }
 .why-choose .choose-left .list li:last-child{
 	margin-bottom:0px;
@@ -1085,7 +1095,7 @@ Version:	1.1
 .why-choose .choose-right{
 	height:100%;
 	width:100%;
-	background-image:url('img/video-bg.jpg');
+	/* background-image:url('img/video-bg.jpg'); */
 	background-size:cover;
 	background-position:center;
 	background-repeat:no-repeat;
@@ -1096,7 +1106,7 @@ Version:	1.1
 	height: 70px;
 	width: 70px;
 	line-height: 70px;
-	text-align: center;
+	text-align: right;
 	border-radius: 100%;
 	position: absolute;
 	left: 50%;
@@ -2714,7 +2724,6 @@ Version:	1.1
 	-webkit-transition: all 0.4s ease;
 	-moz-transition: all 0.4s ease;
 	transition: all 0.4s ease;
-	font-weight: 400;
 	border-radius: 0px;
 	padding-left: 34px;
 	padding-right: 20px;
@@ -4087,15 +4096,13 @@ Version:	1.1
 .footer .single-footer .social li a {
 	height: 34px;
 	width: 34px;
-	line-height: 34px;
 	text-align: center;
 	border: 1px solid #fff;
-	text-align: center;
 	padding: 0;
 	border-radius: 100%;
 	display: block;
 	color:#fff;
-	font-size: 16px;
+	font-size: 20px;
 
 }
 .footer .single-footer .social li a:hover{
