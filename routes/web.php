@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
-
+use App\Http\Controllers\DocterController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,5 +20,7 @@ Route::get('/home',[HomeController::class,'Show'])->name('home');
 
 Route::get('/order',[OrderController::class,'create'])->name('orders');
 Route::post('/order/submit_order',[OrderController::class,'store'])->name('submit_order');
+Route::get('/showdocters',[DocterController::class,'index'])->name('index.docters');
+
 
 

@@ -41,15 +41,15 @@
             border-style:dashed;
             border-color: rgb(117, 92, 79);
         }
-body {
-    background-image: url('img/signup-bg.jpg');
-    background-size: cover; /* این خط برای تنظیم اندازه تصویر به گونه‌ای است که همواره صفحه را پوشش دهد */
-    background-position: center; /* این خط برای تنظیم موقعیت تصویر در پس‌زمینه استفاده می‌شود */
-    background-repeat: no-repeat; /* این خط جلوگیری می‌کند تا تصویر تکرار شود */
-}
+        .header-right {
+        text-align: right;
+    }
     </style>
+
 </head>
 
+@yield('style.orders')
+@yield('style.docters')
 <body id='body' dir="auto">
 
     <!-- Preloader -->
@@ -133,12 +133,12 @@ body {
                             <div class="main-menu">
                                 <nav class="navigation">
                                     <ul class="nav menu">
-                                        <li class="active"><a href="#">صفحه اصلی <i
+                                        <li class="active"><a href="{{ route('home') }}">صفحه اصلی <i
                                                     class="icofont-rounded-down"></i></a>
-                      
                                         </li>
-                                        <li><a href="#">پزشکان </a></li>
-                                        <li><a href="#products">محصولات</a></li>
+                                
+                                        <li ><a href="{{route('index.docters')}}">پزشکان </a></li>
+                                        <li><a href="{{route('orders')}}">محصولات</a></li>
                                         <li><a href="#news">اخبار</i></a>
                         
                                         </li>
@@ -164,31 +164,39 @@ body {
         <!--/ End Header Inner -->
     </header>
     <!-- End Header Area -->
-@if(session('success'))
+    {{-- @if(session('success'))
     <div class="alert alert-success" style="text-align: right">
         {{ session('success') }}
     </div>
- @endif   
- 
- @if($errors->any() || session('error'))
- <div class="alert alert-danger" style="text-align: right">
-     @if($errors->any())
-         <ul>
-             @foreach($errors->all() as $error)
-                 <li>{{ $error }}</li>
-             @endforeach
-         </ul>
-     @endif
-
-     @if(session('error'))
-         {{ session('error') }}
-     @endif
- </div>
 @endif
 
+@if($errors->any() || session('error'))
+    <div class="alert alert-danger" style="text-align: right" id="error-message">
+        @if($errors->any())
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        @endif
+
+        @if(session('error'))
+            {{ session('error') }}
+        @endif
+    </div>
+@endif --}}
+{{-- <div class="header-right">
+    <h1>@yield('product')</h1>
+    <h2>@yield('docters')</h2>
+</div> --}}
+
+<div class="alert alert-success" style="text-align: right" id="success-message"></div>
+<div class="alert alert-danger" style="text-align: right" id="error-message">
+    <ul id="error-list"></ul>
+</div>
 
     @yield('form')
-
+    @yield('index_doc')
   
           
     <!-- Footer Area -->

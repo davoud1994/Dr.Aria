@@ -59,11 +59,20 @@ class OrderController extends Controller
                 $msg ='ایمیل تکراری میباشد';  
                 break;
             }
+            if ($request->ajax()) {
+                return response()->json(['message' => $msg]);
+            }
             return redirect(route('orders'))->with('error',$msg);
     }
         // اعلان موفقیت
-        $msg='سفارش شما با موفقیت ثبت شد بعد از بررسی های لازم با شما تماس گرفته خواهد شد';
-        return redirect(route('orders'))->with('success',$msg);
+        $msg='سفارش شما با موفقیت ثبت شد ومتعاقبا با شما در روزهای اتی تماس گرفته خواهد شد لطفا به صفحه قبل بازگردید ';
+        
+       
+        // return response()->json(['errors' => $request->errors()], 422);
+        if ($request->ajax()) {
+            return response()->json(['message' => $msg]);
+        }
+        return redirect(route('orders'))->with('success', $msg);
     }
 
     /**

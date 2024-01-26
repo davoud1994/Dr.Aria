@@ -230,7 +230,7 @@
 													<li><a href="index.html">Home Page 1</a></li>
 												</ul> --}}
                                         </li>
-                                        <li><a href="#">پزشکان </a></li>
+                                        <li><a href="{{route('index.docters')}}">پزشکان </a></li>
                                         <li><a href="#products">محصولات</a></li>
                                         <li><a href="#news">اخبار</i></a>
                                             {{-- <ul class="dropdown">
