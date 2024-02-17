@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('Lastname');
             $table->string('Cellphone');
-            $table->string('email')->unique();
-            $table->string('Address');
+            $table->string('description')->nullable();
+            $table->string('Address')->nullable();
             $table->string('category_order');
             $table->rememberToken();
             $table->timestamps();

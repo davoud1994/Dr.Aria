@@ -44,6 +44,72 @@
         .header-right {
         text-align: right;
     }
+
+    .popup {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .popup-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 40px;
+            border: 1px solid #888;
+            width: 400px;
+            text-align: center;
+            /* تنظیم متن وسط هدر */
+        }
+
+        .form-header {
+            margin-bottom: 20px;
+            /* فاصله بین هدر و بخش اصلی فرم */
+            text-align: center;
+            /* تنظیم متن وسط هدر */
+            font-size: 20px
+        }
+
+        .form-control {
+            text-align: right;
+            font-family: vazir;
+        }
+
+        .close {
+            color: #ff0000;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            border-style: solid;
+            border-color: #016ea8;
+            width: 30px;
+            height: 30px;
+
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* سبک‌های فرم */
+        #loginForm {
+            text-align: right;
+        }
+
+        #btn_form {
+            margin-right: 300px;
+            font-weight: bold;
+            font-family: vazir;
+
+        }
     </style>
 
 </head>
@@ -97,6 +163,24 @@
                         <ul class="top-link">
                             <li><a href="#"class='btn' id='button-rigester'>ثبت نام</a></li>
                             <li><a href="#" class='btn' id='button-enter'>ورود</a></li>
+                            <div id="popup" class="popup">
+                                <div class="popup-content">
+                                    <span class="close" id="close">&times;</span>
+                                    <h2 class="form-header">فرم ورود</h2>
+                                    <form id="loginForm" method="POST" action="{{route('submit')}}" class="text-right">
+                                        @csrf
+                                        <div class="form-group">
+                                            <label for="name">:نام کاربری</label>
+                                            <input type="text" name="nameform" id="name_form" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password"> :رمز عبور</label>
+                                            <input type="password" name="password" id="password" class="form-control">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary" id='btn_form'>ورود</button>
+                                    </form>
+                                </div>
+                            </div>
                         </ul>
                         <!-- End Contact -->
                     </div>
@@ -190,10 +274,14 @@
     <h2>@yield('docters')</h2>
 </div> --}}
 
+<div id="error-name" class="alert alert-danger" style="display: none;text-align: right;margin-bottom:0px" ></div>
+<div id="error-lastname" class="alert alert-danger" style="display: none;text-align: right;margin-bottom:0px" ></div>
+<div id="error-cellphone" class="alert alert-danger" style="display: none;text-align: right;margin-bottom:0px" ></div>
+<div id="error-order_category" class="alert alert-danger" style="display: none;text-align: right" ></div>
 <div class="alert alert-success" style="text-align: right" id="success-message"></div>
-<div class="alert alert-danger" style="text-align: right" id="error-message">
+{{-- <div class="alert alert-danger" style="text-align: right" id="error-message">
     <ul id="error-list"></ul>
-</div>
+</div> --}}
 
     @yield('form')
     @yield('index_doc')
@@ -273,7 +361,7 @@
                         <div class="single-footer">
                             <h2>موقعیت شرکت</h2>
                             <div calss='one'>
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d819.1012256472928!2d48.52088922528803!3d34.79575377053601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1703580482624!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d819.1012256472928!2d48.52088922528803!3d34.79575377053601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1703580482624!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> --}}
                               </div>
 
                         </div>
@@ -341,8 +429,167 @@
     {{-- <script src="js/bootstrap.min.js"></script>
 		<!-- Main JS -->
 		<script src="js/main.js"></script> --}}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+        
     @vite('resources/js/app.js')
- 
+    <script>
+        // تابع جاوااسکریپت برای حرکت به بخش مورد نظر
+        function scrollToSection(sectionId) {
+            var section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({
+                    behavior: "smooth"
+                });
+            }
+        }
+
+        document.getElementById('button-enter').addEventListener('click', function() {
+            document.getElementById('popup').style.display = 'block';
+        });
+
+        // وقتی روی دکمه بستن پاپ‌آپ کلیک می‌شود، پاپ‌آپ مخفی می‌شود
+        document.getElementById('close').addEventListener('click', function() {
+            document.getElementById('popup').style.display = 'none';
+        });
+
+       
+        $(document).ready(function() {
+            // وقتی دکمه "ثبت" کلیک می‌شود، پاپ‌آپ نمایش داده می‌ش
+
+            // هنگام ارسال فرم لاگین
+            $('#loginForm').submit(function(event) {
+                event.preventDefault();
+
+                // بررسی وجود مقادیر در فیلدها
+                var nameValue = $('#name_form').val();
+                var passwordValue = $('#password').val();
+
+                if (nameValue && passwordValue) {
+                    // ارسال درخواست به سمت سرور
+                    $.ajax({
+                        type: "POST",
+                        url: $(this).attr('action'),
+                        data: $(this).serialize(),
+                        dataType: 'json',
+                        success: function(response) {
+                            // دریافت پاسخ موفقیت‌آمیز
+                            // هدایت کاربر به مسیر موردنظر
+                            window.location.href = '/order';
+                            // مثال: هدایت به صفحه خوش‌آمدگویی
+                        },
+
+                        error: function(xhr, status, error) {
+                            // بررسی کد وضعیت خطا
+                            if (xhr.status == 300) {
+                                // نمایش پیام خطا به کاربر
+                                alert("نام کاربری یا رمز عبور نامعتبر است.");
+                            }
+                        }
+                    });
+                } else {
+                    // اطلاع دادن به کاربر در مورد فیلدهای خالی
+                    alert('لطفاً فیلدها را پر کنید.');
+                }
+            });
+
+
+        });
+
+
+
+        $(document).ready(function() {
+    var isOrderSubmitted = false;
+
+    function hideErrors() {
+        $('#error-name, #error-lastname, #error-cellphone, #error-order_category').fadeOut('slow');
+    }
+
+    // پاک کردن مقادیر فیلدها هنگام لود صفحه
+    $('#lastname, #name, #cellphone').val('');
+
+    $('#submit-form').on('submit', function(event) {
+        event.preventDefault();
+
+        if (!isOrderSubmitted) {
+            var isValid = true;
+            var $form = $(this);
+
+            var lastname = $form.find('#lastname').val();
+            var name = $form.find('#name').val();
+            var cellphone = $form.find('#cellphone').val();
+            var order_category = $form.find('#order_category').val();
+
+            if (name == '') {
+                $('#error-name').html('لطفاً فیلد نام را پر کنید.').fadeIn('slow');
+                isValid = false;
+            } else {
+                $('#error-name').hide();
+            }
+
+            if (lastname == '') {
+                $('#error-lastname').html('لطفاً فیلد نام خانوادگی را پر کنید.').fadeIn('slow');
+                isValid = false;
+            } else {
+                $('#error-lastname').hide();
+            }
+
+            var phonePattern = /^[0-9]{11}$/;
+            if (!phonePattern.test(cellphone)) {
+                $('#error-cellphone').html('لطفاً یک شماره تلفن یازده رقمی وارد کنید.').fadeIn('slow');
+                isValid = false;
+            } else {
+                $('#error-cellphone').hide();
+            }
+
+            if (order_category == null) {
+                $('#error-order_category').html('لطفاً یک گزینه از پکیج مورد نظر را انتخاب کنید.').fadeIn('slow');
+                isValid = false;
+            } else {
+                $('#error-order_category').hide();
+            }
+
+            if (!isValid) {
+                setTimeout(function() {
+                    hideErrors();
+                }, 5000);
+            }
+
+            if (isValid) {
+                isOrderSubmitted = true; // ثبت سفارش اولیه
+                $.ajax({
+                    url: $form.attr('action'),
+                    type: 'POST',
+                    data: $form.serialize(),
+                    success: function(response) {
+                        $('#success-message').text(response.message).fadeIn('slow').delay(3000).fadeOut('slow');
+                        $('#error-message').hide();
+                    },
+                    error: function(xhr) {
+                        var errors = xhr.responseJSON.errors;
+                        var errorMessage = '';
+                        for (var field in errors) {
+                            if (errors.hasOwnProperty(field)) {
+                                errorMessage += errors[field][0] + '<br>';
+                            }
+                        }
+
+                        $('#error-message').html(errorMessage).fadeIn('slow');
+                        $('#success-message').hide();
+                    }
+                });
+            }
+        } else {
+            // اگر سفارش قبلا ثبت شده بود...
+            alert('شما قبلاً یکبار سفارش  خود را ثبت کرده‌اید.');
+        }
+    });
+});
+
+    </script>
+
 </body>
 
 </html>

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\DocterController;
+use App\Http\Controllers\Aucadmin\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,4 +24,6 @@ Route::post('/order/submit_order',[OrderController::class,'store'])->name('submi
 Route::get('/showdocters',[DocterController::class,'index'])->name('index.docters');
 
 
+
+Route::post('/login/', [LoginController::class,'login'])->name('submit');
 

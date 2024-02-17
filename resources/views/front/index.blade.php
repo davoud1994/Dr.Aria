@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="fa">
+<html class="no-js" lang="en">
 
 <head>
     <!-- Meta Tags -->
@@ -44,6 +44,12 @@
     {{-- <link rel="stylesheet" href="css/normalize.css"> --}}
     <link rel="stylesheet" href="style.css">
     {{-- <link rel="stylesheet" href="css/responsive.css">  --}}
+    {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" defer></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" defer></script> --}}
     @vite('resources/css/app.css')
     <style>
         /* انیمیشن برای مؤثر کردن حرکت به تگ مورد نظر */
@@ -51,14 +57,15 @@
         body {
             scroll-behavior: smooth;
         }
-        iframe{
+
+        iframe {
             height: 300px;
 
         }
 
-        .one{
+        .one {
             border-width: 100px;
-            border-style:dashed;
+            border-style: dashed;
             border-color: rgb(117, 92, 79);
         }
 
@@ -138,6 +145,74 @@
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
         }
+
+        /* سبک‌های مورد نیاز برای پاپ‌آپ */
+        /* سبک‌های پاپ‌آپ */
+        .popup {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .popup-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 40px;
+            border: 1px solid #888;
+            width: 400px;
+            text-align: center;
+            /* تنظیم متن وسط هدر */
+        }
+
+        .form-header {
+            margin-bottom: 20px;
+            /* فاصله بین هدر و بخش اصلی فرم */
+            text-align: center;
+            /* تنظیم متن وسط هدر */
+            font-size: 20px
+        }
+
+        .form-control {
+            text-align: right;
+            font-family: vazir;
+        }
+
+        .close {
+            color: #ff0000;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            border-style: solid;
+            border-color: #016ea8;
+            width: 30px;
+            height: 30px;
+
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* سبک‌های فرم */
+        form {
+            text-align: right;
+        }
+
+        #btn_form {
+            margin-right: 300px;
+            font-weight: bold;
+            font-family: vazir;
+
+        }
     </style>
 </head>
 
@@ -188,6 +263,24 @@
                         <ul class="top-link">
                             <li><a href="#"class='btn' id='button-rigester'>ثبت نام</a></li>
                             <li><a href="#" class='btn' id='button-enter'>ورود</a></li>
+                            <div id="popup" class="popup">
+                                <div class="popup-content">
+                                    <span class="close" id="close">&times;</span>
+                                    <h2 class="form-header">فرم ورود</h2>
+                                    <form id="loginForm" method="POST" action="{{route('submit')}}" class="text-right">
+                                        @csrf
+                                        <div class="form-group">
+                                            <label for="name">:نام کاربری</label>
+                                            <input type="text" name="nameform" id="name_form" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password"> :رمز عبور</label>
+                                            <input type="password" name="password" id="password" class="form-control">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary" id='btn_form'>ورود</button>
+                                    </form>
+                                </div>
+                            </div>
                         </ul>
                         <!-- End Contact -->
                     </div>
@@ -230,7 +323,7 @@
 													<li><a href="index.html">Home Page 1</a></li>
 												</ul> --}}
                                         </li>
-                                        <li><a href="{{route('index.docters')}}">پزشکان </a></li>
+                                        <li><a href="{{ route('index.docters') }}">پزشکان </a></li>
                                         <li><a href="#products">محصولات</a></li>
                                         <li><a href="#news">اخبار</i></a>
                                             {{-- <ul class="dropdown">
@@ -364,7 +457,8 @@
                                 <div class="single-content">
                                     <span> </span>
                                     <h4>ویژگی های محصولات ما</h4>
-                        <p>دسترسی سریع به پزشک مورد نظر خود , امنیت بالا و پشتیبانی فعال از ویژ گیهای ممتاز محصولات ما میباشد</p>
+                                    <p>دسترسی سریع به پزشک مورد نظر خود , امنیت بالا و پشتیبانی فعال از ویژ گیهای ممتاز
+                                        محصولات ما میباشد</p>
 
                                     {{-- <a href="#">اطلاعات بیشتر<i class="fa fa-long-arrow-left"></i></a> --}}
                                 </div>
@@ -469,7 +563,7 @@
             <div class="row">
                 <div class="col-lg-6 col-12">
                     <!-- Start Choose Left -->
-                    <div class="choose-left" >
+                    <div class="choose-left">
                         <h3> ما که هستیم</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pharetra antege vel est
                             lobortis, a commodo magna rhoncus. In quis nisi non emet quam pharetra commodo. </p>
@@ -499,7 +593,7 @@
                     <div class="choose-right">
                         <div class="video-image">
                             <!-- Video Animation -->
-                          {{-- <div class="promo-video">
+                            {{-- <div class="promo-video">
                                 <div class="waves-block">
                                     <div class="waves wave-1"></div>
                                     <div class="waves wave-2"></div>
@@ -509,16 +603,16 @@
                             <!--/ End Video Animation -->
                             {{-- <a href="https://www.youtube.com/watch?v=RFVXy6CRVR4"
                                 class="video video-popup mfp-iframe"><i class="fa fa-play"></i></a> --}}
-                                <video controls class='vedio'  >
-                                    <source src='{{url("#")}}' type="video/mp4">
-                                </video>
+                            <video controls class='vedio'>
+                                <source src='{{ url('#') }}' type="video/mp4">
+                            </video>
                         </div>
                     </div>
                     <!-- End Choose Rights -->
                 </div>
             </div>
         </div>
-    </section> 
+    </section>
     <!--/ End Why choose -->
 
     <!-- Start Call to action -->
@@ -554,7 +648,7 @@
                 </div>
             </div>
         </div> --}}
-        {{-- <div class="container-fluid">
+    {{-- <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12 col-12">
                     <div class="owl-carousel portfolio-slider">
@@ -621,7 +715,7 @@
                                 <span >دکتر</span>
                             </div>
                         </div> --}}
-                        {{-- <div class="single-pf">
+    {{-- <div class="single-pf">
                             <img src="img/pf2.jpg" alt="#">
                             <a href="portfolio-details.html" class="btn">View Details</a>
                         </div>
@@ -629,11 +723,11 @@
                             <img src="img/pf3.jpg" alt="#">
                             <a href="portfolio-details.html" class="btn">View Details</a>
                         </div> --}}
-                        {{-- <div class="single-pf">
+    {{-- <div class="single-pf">
                             <img src="img/pf4.jpg" alt="#">
                             <a href="portfolio-details.html" class="btn">View Details</a>
                         </div> --}}
-                    {{-- </div>
+    {{-- </div>
                 </div>
             </div>
         </div>
@@ -676,22 +770,22 @@
                         </div>
                     </div>
                 </div> --}}
-                <!-- End Single Service -->
-            </div>
+    <!-- End Single Service -->
+    </div>
 
-        </div>
-        </div>
+    </div>
+    </div>
     </section>
     <!--/ End service -->
 
     <!-- Pricing Table -->
- {{--  background-repeat: no-repeat;background-size: cover;" --}}
+    {{--  background-repeat: no-repeat;background-size: cover;" --}}
     <section class="pricing-table section" id="products" style="padding-top: 0px;">
 
         <div class="container">
-            <div class="row" >
+            <div class="row">
                 <div class="col-lg-12" style="margin-top: 0px;">
-                    <div class="section-title" >
+                    <div class="section-title">
                         <h2>لیست محصولات ما</h2>
                         <img src="img/section-img.png" alt="#">
                         {{-- <p>دسترسی سریع به پزشک مورد نظر خود وامنیت بالا وپشتیبانی فعال از ویژ گی های ممتاز محصولات ما میباشد</p> --}}
@@ -701,11 +795,11 @@
             <div class="row">
                 <!-- Single Table -->
                 <div class="col-lg-4 col-md-12 col-12">
-                    <div class="single-table"  >
+                    <div class="single-table">
                         <!-- Table Head -->
                         <div class="table-head">
                             <div class="icon">
-                                <i class="icofont icofont-tooth" style="color: #e6895e" ></i>
+                                <i class="icofont icofont-tooth" style="color: #e6895e"></i>
                             </div>
                             <h4 class="title">طرح برنزی</h4>
                             <div class="price">
@@ -714,14 +808,20 @@
                         </div>
                         <!-- Table List -->
                         <ul class="table-list" style="color: black">
-                            <li ><i class="icofont icofont-ui-check" style="background-color: #ee7d49" ></i>مدیرت مالی و پرونده  بیماران در مطب</li>
-                            <li><i class="icofont icofont-ui-check" style="background-color: #bf8970"  ></i>مدیریت تصاویر رادیو گرافی بیماران در پرونده</li>
-                            <li ><i class="icofont icofont-ui-check" style="background-color: #bf8970"  ></i>قابلیت ثبت ملاحظات  ویژه درمانی به تفکیک هر درمان</li>
-                            <li ><i class="icofont icofont-ui-check" style="background-color: #bf8970" ></i>قابلیت گزارش گیری مالی ;بدهی و پرداختی بیماران</li>
-                            <li ><i class="icofont icofont-ui-check"style="background-color: #bf8970"  ></i>قابلیت ارتباط ثبت الکترونیکی دارو و <br>رادیو گرافی با بیمه ها</li>
+                            <li><i class="icofont icofont-ui-check" style="background-color: #ee7d49"></i>مدیرت مالی و
+                                پرونده بیماران در مطب</li>
+                            <li><i class="icofont icofont-ui-check" style="background-color: #bf8970"></i>مدیریت
+                                تصاویر رادیو گرافی بیماران در پرونده</li>
+                            <li><i class="icofont icofont-ui-check" style="background-color: #bf8970"></i>قابلیت ثبت
+                                ملاحظات ویژه درمانی به تفکیک هر درمان</li>
+                            <li><i class="icofont icofont-ui-check" style="background-color: #bf8970"></i>قابلیت گزارش
+                                گیری مالی ;بدهی و پرداختی بیماران</li>
+                            <li><i class="icofont icofont-ui-check"style="background-color: #bf8970"></i>قابلیت ارتباط
+                                ثبت الکترونیکی دارو و <br>رادیو گرافی با بیمه ها</li>
                         </ul>
                         <div class="table-bottom">
-                            <a class="btn" href="{{route('orders')}}" style="background-color: #bf8970 ;font-weight:bold;" >مشاوره و ارائه خدمات </a>
+                            <a class="btn" href="{{ route('orders') }}"
+                                style="background-color: #bf8970 ;font-weight:bold;">مشاوره و ارائه خدمات </a>
                         </div>
                         <!-- Table Bottom -->
                     </div>
@@ -729,7 +829,7 @@
                 <!-- End Single Table-->
                 <!-- Single Table -->
                 <div class="col-lg-4 col-md-12 col-12">
-                    <div class="single-table" >
+                    <div class="single-table">
                         <!-- Table Head -->
                         <div class="table-head">
                             <div class="icon">
@@ -742,14 +842,20 @@
                         </div>
                         <!-- Table List -->
                         <ul class="table-list">
-                            <li ><i class="icofont icofont-ui-check" style="background-color: #c0c0c0"></i>دارا بودن تمام قابلیت های پک برنزی</li>
-                            <li><i class="icofont icofont-ui-check" style="background-color: #c0c0c0"></i>دارا بودن بخش تشخیص و تعیین  یادداشت های هر پرونده</li>
-                            <li><i class="icofont icofont-ui-check" style="background-color: #c0c0c0"></i>امکان تغییرات پذیرش به شیوه مطب بصورت اختصاصی</li>
-                            <li><i class="icofont icofont-ui-check"style="background-color: #c0c0c0" ></i>قابلیت گروه بندی درمان و ترتیب الویت نمایش هر بخش</li>
-                            <li><i class="icofont icofont-ui-check" style="background-color: #c0c0c0"></i>قابلیت ارتباط با قلم نوری جهت ثبت مراحل ویزیت</li>
+                            <li><i class="icofont icofont-ui-check" style="background-color: #c0c0c0"></i>دارا بودن
+                                تمام قابلیت های پک برنزی</li>
+                            <li><i class="icofont icofont-ui-check" style="background-color: #c0c0c0"></i>دارا بودن
+                                بخش تشخیص و تعیین یادداشت های هر پرونده</li>
+                            <li><i class="icofont icofont-ui-check" style="background-color: #c0c0c0"></i>امکان
+                                تغییرات پذیرش به شیوه مطب بصورت اختصاصی</li>
+                            <li><i class="icofont icofont-ui-check"style="background-color: #c0c0c0"></i>قابلیت گروه
+                                بندی درمان و ترتیب الویت نمایش هر بخش</li>
+                            <li><i class="icofont icofont-ui-check" style="background-color: #c0c0c0"></i>قابلیت
+                                ارتباط با قلم نوری جهت ثبت مراحل ویزیت</li>
                         </ul>
                         <div class="table-bottom">
-                            <a class="btn" href="{{route('orders')}}" style="background-color: #c0c0c0"> مشاوره و ارائه خدمات</a>
+                            <a class="btn" href="{{ route('orders') }}" style="background-color: #c0c0c0"> مشاوره
+                                و ارائه خدمات</a>
                         </div>
                         <!-- Table Bottom -->
                     </div>
@@ -757,7 +863,7 @@
                 <!-- End Single Table-->
                 <!-- Single Table -->
                 <div class="col-lg-4 col-md-12 col-12">
-                    <div class="single-table " >
+                    <div class="single-table ">
                         <!-- Table Head -->
                         <div class="table-head">
                             <div class="icon">
@@ -770,14 +876,20 @@
                         </div>
                         <!-- Table List -->
                         <ul class="table-list">
-                            <li><i class="icofont icofont-ui-check" style="background-color:#ffe75a"></i> دارا بودن تمام قابلیت های پک برنزی</li>
-                            <li><i class="icofont icofont-ui-check" style="background-color:#ffe75a"></i>دارا بودن بخش تشخیص و تعیین یادداشت های هر پرونده</li>
-                            <li><i class="icofont icofont-ui-check"style="background-color:#ffe75a" ></i>امکان تغییرات پذیرش به شیوه مطب بصورت اختصاصی</li>
-                            <li><i class="icofont icofont-ui-check"style="background-color:#ffe75a" ></i> قابلیت گروه بندی درمان و ترتیب الویت نمایش هر بخش</li>
-                            <li><i class="icofont icofont-ui-check"style="background-color:#ffe75a"></i>قابلیت ارتباط با قلم نوری جهت ثبت مراحل ویزیت</li>
+                            <li><i class="icofont icofont-ui-check" style="background-color:#ffe75a"></i> دارا بودن
+                                تمام قابلیت های پک برنزی</li>
+                            <li><i class="icofont icofont-ui-check" style="background-color:#ffe75a"></i>دارا بودن بخش
+                                تشخیص و تعیین یادداشت های هر پرونده</li>
+                            <li><i class="icofont icofont-ui-check"style="background-color:#ffe75a"></i>امکان تغییرات
+                                پذیرش به شیوه مطب بصورت اختصاصی</li>
+                            <li><i class="icofont icofont-ui-check"style="background-color:#ffe75a"></i> قابلیت گروه
+                                بندی درمان و ترتیب الویت نمایش هر بخش</li>
+                            <li><i class="icofont icofont-ui-check"style="background-color:#ffe75a"></i>قابلیت ارتباط
+                                با قلم نوری جهت ثبت مراحل ویزیت</li>
                         </ul>
                         <div class="table-bottom">
-                            <a class="btn" href="{{route('orders')}}" style="background-color:#ffe75a" > مشاوره و ارائه خدمات</a>
+                            <a class="btn" href="{{ route('orders') }}" style="background-color:#ffe75a"> مشاوره و
+                                ارائه خدمات</a>
                         </div>
                         <!-- Table Bottom -->
                     </div>
@@ -840,10 +952,10 @@
     </div> --}}
 
     <!-- Start Blog Area -->
-    <section class="blog section" id="news"  >
+    <section class="blog section" id="news">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12" >
+                <div class="col-lg-12">
                     <div class="section-title">
                         <h2>با جدیدترین اخبار پزشکی ما همراه باشید</h2>
                         <img src="img/section-img.png" alt="#">
@@ -852,7 +964,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-6 col-12"  >
+                <div class="col-lg-4 col-md-6 col-12">
                     <!-- Single Blog -->
                     <div class="single-news">
                         <div class="news-head"style="text-align: right">
@@ -863,7 +975,8 @@
 
                                 <div class="date"><i class='icofont-calendar'></i>1399/8/10</div>
                                 <h2><a href="blog-single.html">علائم کبد چرب کدامند؟</a></h2>
-                                <p class="text">در بسیاری از موارد کبد چرب با علائم قابل توجهی همراه نیست. اما ممکن است احساس خستگی کرده و یا احساس ناراحتی یا درد در سمت راست بالای شکم داشته باشید</p>
+                                <p class="text">در بسیاری از موارد کبد چرب با علائم قابل توجهی همراه نیست. اما ممکن
+                                    است احساس خستگی کرده و یا احساس ناراحتی یا درد در سمت راست بالای شکم داشته باشید</p>
                             </div>
                         </div>
                     </div>
@@ -879,23 +992,27 @@
                             <div class="news-content">
                                 <div class="date"><i class='icofont-calendar'></i>1399/8/12</div>
                                 <h2><a href="blog-single.html">علائم و نشانه های کمبود کلسیم</a></h2>
-                                <p class="text">کمبود کلسیم، که به عنوان هیپوکلسمی شناخته می شود، یک مشکل سلامتی جهانی است و مردم در سراسر جهان به راحتی کلسیم را از رژیم غذایی خود دریافت نمی کنند</p>
+                                <p class="text">کمبود کلسیم، که به عنوان هیپوکلسمی شناخته می شود، یک مشکل سلامتی
+                                    جهانی است و مردم در سراسر جهان به راحتی کلسیم را از رژیم غذایی خود دریافت نمی کنند
+                                </p>
                             </div>
                         </div>
                     </div>
                     <!-- End Single Blog -->
                 </div>
-                <div class="col-lg-4 col-md-6 col-12" >
+                <div class="col-lg-4 col-md-6 col-12">
                     <!-- Single Blog -->
                     <div class="single-news">
                         <div class="news-head">
                             <img src="img/1604303343_Group 31.jpg" alt="#">
                         </div>
-                        <div class="news-body" >
+                        <div class="news-body">
                             <div class="news-content">
                                 <div class="date"><i class='icofont-calendar'></i>1399/8/12</div>
                                 <h2><a href="blog-single.html">سنگ کلیه</a></h2>
-                                <p class="text">سنگ کلیه تا وقتی حرکت نمی‌کند و ثابت است، هیچ علامتی ندارد. مشکلات از زمانی آغاز می‌گردد که سنگ در کلیه جابه‌جا می‌شود یا به سمت میزنای (لوله‌ای که هر کلیه را به مثانه وصل می‌کند) به راه می‌افتد</p>
+                                <p class="text">سنگ کلیه تا وقتی حرکت نمی‌کند و ثابت است، هیچ علامتی ندارد. مشکلات از
+                                    زمانی آغاز می‌گردد که سنگ در کلیه جابه‌جا می‌شود یا به سمت میزنای (لوله‌ای که هر
+                                    کلیه را به مثانه وصل می‌کند) به راه می‌افتد</p>
                             </div>
                         </div>
                     </div>
@@ -945,7 +1062,7 @@
         </div>
     </div> --}}
     <!--/Ens clients -->
-{{--
+    {{--
     <!-- Start Appointment -->
     <section class="appointment">
         <div class="container">
@@ -1123,8 +1240,7 @@
                                         @endforeach --}}
 
                                         @foreach ($info_footer as $item)
-                                            <li><a href="#"><i class="fa fa-caret-left"
-                                                    aria-hidden="true"></i>
+                                            <li><a href="#"><i class="fa fa-caret-left" aria-hidden="true"></i>
                                                     {{ $item->L_questions }}</a></li>
 
                                             <li><a href="#"><i class="fa fa-caret-left"aria-hidden="true"></i>
@@ -1174,8 +1290,8 @@
                         <div class="single-footer">
                             <h2>موقعیت شرکت</h2>
                             <div calss='one'>
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d819.1012256472928!2d48.52088922528803!3d34.79575377053601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1703580482624!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                              </div>
+                                {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d819.1012256472928!2d48.52088922528803!3d34.79575377053601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1703580482624!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> --}}
+                            </div>
 
                         </div>
                     </div>
@@ -1237,21 +1353,78 @@
 		<!-- Magnific Popup JS -->
 		<script src="js/jquery.magnific-popup.min.js"></script> --}}
     <!-- Counter Up CDN JS -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    {{-- <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script> --}}
     <!-- Bootstrap JS -->
     {{-- <script src="js/bootstrap.min.js"></script>
 		<!-- Main JS -->
 		<script src="js/main.js"></script> --}}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>  
     @vite('resources/js/app.js')
     <script>
-			// تابع جاوااسکریپت برای حرکت به بخش مورد نظر
-			function scrollToSection(sectionId) {
-					var section = document.getElementById(sectionId);
-					if (section) {
-							section.scrollIntoView({ behavior: "smooth" });
-					}
-			}
-	</script>
+        // تابع جاوااسکریپت برای حرکت به بخش مورد نظر
+        function scrollToSection(sectionId) {
+            var section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({
+                    behavior: "smooth"
+                });
+            }
+        }
+
+        document.getElementById('button-enter').addEventListener('click', function() {
+            document.getElementById('popup').style.display = 'block';
+        });
+
+        // وقتی روی دکمه بستن پاپ‌آپ کلیک می‌شود، پاپ‌آپ مخفی می‌شود
+        document.getElementById('close').addEventListener('click', function() {
+            document.getElementById('popup').style.display = 'none';
+        });
+
+        $(document).ready(function() {
+            // وقتی دکمه "ثبت" کلیک می‌شود، پاپ‌آپ نمایش داده می‌ش
+
+            // هنگام ارسال فرم لاگین
+            $('#loginForm').submit(function(event) {
+                event.preventDefault();
+
+                // بررسی وجود مقادیر در فیلدها
+                var nameValue = $('#name_form').val();
+                var passwordValue = $('#password').val();
+
+                if (nameValue && passwordValue) {
+                    // ارسال درخواست به سمت سرور
+                    $.ajax({
+                        type: "POST",
+                        url: $(this).attr('action'),
+                        data: $(this).serialize(),
+                        dataType: 'json',
+                        success: function(response) {
+                            // دریافت پاسخ موفقیت‌آمیز
+                            // هدایت کاربر به مسیر موردنظر
+                            window.location.href = '/order';
+                            // مثال: هدایت به صفحه خوش‌آمدگویی
+                        },
+
+                        error: function(xhr, status, error) {
+                            // بررسی کد وضعیت خطا
+                            if (xhr.status == 300) {
+                                // نمایش پیام خطا به کاربر
+                                alert("نام کاربری یا رمز عبور نامعتبر است.");
+                            }
+                        }
+                    });
+                } else {
+                    // اطلاع دادن به کاربر در مورد فیلدهای خالی
+                    alert('لطفاً فیلدها را پر کنید.');
+                }
+            });
+
+
+        });
+    </script>
+
     {{-- <script>
         function showAlert(messageId, elementId, event) {
             var messageElement = document.getElementById(elementId);

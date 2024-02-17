@@ -32,38 +32,38 @@ class OrderController extends Controller
     public function store(Request $request)
     {
     
-        $request->validate(['name'=>['required', 'string', 'max:255'],
-        'lastname'=>['required', 'string', 'max:255'],
-        'email'=>['nullable',
-        'email',
-        'regex:/^[A-Za-z0-9._%+-]+@gmail\.com$/i',
-        ], // اینجا فرمت خاص برای ایمیل مدنظر شما قرار گرفته است
-        'cellphone' => ['required', 'regex:/^[0-9]{11}$/'],
-        'address'=>['required','string','max:255'],
-        'order_category'=>['required'], // تعیین گزینه‌های ممکن برای دراپ‌دان باکس
-        ]);  
+        // $request->validate(['name'=>['required', 'string', 'max:255'],
+        // 'lastname'=>['required', 'string', 'max:255'],
+        // 'email'=>['nullable',
+        // 'email',
+        // 'regex:/^[A-Za-z0-9._%+-]+@gmail\.com$/i',
+        // ], // اینجا فرمت خاص برای ایمیل مدنظر شما قرار گرفته است
+        // 'cellphone' => ['required', 'regex:/^[0-9]{11}$/'],
+        // 'address'=>['required','string','max:255'],
+        // 'order_category'=>['required'], // تعیین گزینه‌های ممکن برای دراپ‌دان باکس
+        // ]);  
         
     
         $order=new order(['name'=>$request->name,
         'Lastname'=>$request->lastname,
-        'email'=>$request->email,
+        'description'=>$request->description,
         'Cellphone'=>$request->cellphone,
         'Address'=>$request->address,
         'category_order'=>$request->order_category,
     ]);
-       try{
-        $order->save();
-    }catch(Exception $exception){
-            switch($exception->getcode()){
-               case 23000:
-                $msg ='ایمیل تکراری میباشد';  
-                break;
-            }
-            if ($request->ajax()) {
-                return response()->json(['message' => $msg]);
-            }
-            return redirect(route('orders'))->with('error',$msg);
-    }
+    //    try{
+      $order->save();
+    // }catch(Exception $exception){
+    //         switch($exception->getcode()){
+    //            case 23000:
+    //             $msg ='ایمیل تکراری و یا خالی میباشد';  
+    //             break;
+    //         }
+    //         if ($request->ajax()) {
+    //             return response()->json(['message' => $msg]);
+    //         }
+    //         return redirect(route('orders'))->with('error',$msg);
+    // }
         // اعلان موفقیت
         $msg='سفارش شما با موفقیت ثبت شد ومتعاقبا با شما در روزهای اتی تماس گرفته خواهد شد لطفا به صفحه قبل بازگردید ';
         
@@ -72,7 +72,7 @@ class OrderController extends Controller
         if ($request->ajax()) {
             return response()->json(['message' => $msg]);
         }
-        return redirect(route('orders'))->with('success', $msg);
+       return redirect(route('orders'))->with('success', $msg);
     }
 
     /**
