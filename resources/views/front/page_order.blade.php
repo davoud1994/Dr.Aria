@@ -107,13 +107,13 @@
 
         <div class="div-form ">
             <label for="lastname">:نام خانوادگی</label>
-            <input class="input_order" type="text" id="lastname" name="lastname" value='{{ old('lastname') }}'>
+            <input class="input_order" type="text" id="lastname" name="lastname" maxlength="10"  value='{{ old('lastname') }}'>
         </div>
 
 
         <div class="div-form ">
             <label for="name">:نام</label>
-            <input class="input_order" type="text" id="name" name="name" value='{{ old('name') }}'>
+            <input class="input_order" type="text" id="name" name="name" maxlength="10" value='{{ old('name') }}'>
         </div>
 
 
@@ -121,18 +121,18 @@
         <div class="div-form ">
 
             <label for="cellphone">:تلفن</label>
-            <input class="input_order" type="text" id="cellphone" name="cellphone" value='{{ old('cellphone') }}'>
+            <input class="input_order" type="text" id="cellphone" name="cellphone" maxlength="11" value='{{ old('cellphone') }}'>
 
         </div>
 
         <div class="div-form ">
             <label for="description">:توضیحات</label>
-            <textarea class="input_order" type="text" id="description" name="description">{{ old('description') }} </textarea>
+            <textarea class="input_order" type="text" id="description" name="description" maxlength="20">{{ old('description') }} </textarea>
         </div>
 
         <div class="div-form ">
             <label for="address">:نشانی</label>
-            <textarea class="input_order" type="text" id="address" name="address">{{ old('address') }} </textarea>
+            <textarea class="input_order" type="text" id="address" name="address" maxlength="25">{{ old('address') }} </textarea>
         </div>
 
 

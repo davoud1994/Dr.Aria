@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Aucadmin;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use App\Http\Controllers\Controller;
+use App\Models\Order;
 use Illuminate\Http\Request;
 
 class LoginController extends Controller
@@ -25,5 +26,13 @@ class LoginController extends Controller
         return response()->json(['error' => 'نام کاربری یا رمز عبور نامعتبر است.'], 300);
       }
     }
+
+    public function index_members(){
+      
+      $info_order =Order::all();
+      return view('back.tabel_order', compact('info_order'));
+
+    }
+
   }
 

@@ -27,3 +27,6 @@ Route::get('/showdocters',[DocterController::class,'index'])->name('index.docter
 
 Route::post('/login/', [LoginController::class,'login'])->name('submit');
 
+
+Route::get('/Admin_page',[LoginController::class,'index_members'])->name('admin_page');
+

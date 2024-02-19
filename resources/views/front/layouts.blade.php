@@ -477,7 +477,7 @@
                         success: function(response) {
                             // دریافت پاسخ موفقیت‌آمیز
                             // هدایت کاربر به مسیر موردنظر
-                            window.location.href = '/order';
+                            window.location.href = '/Admin_page';
                             // مثال: هدایت به صفحه خوش‌آمدگویی
                         },
 
