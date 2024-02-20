@@ -456,47 +456,48 @@
         });
 
        
-        $(document).ready(function() {
-            // وقتی دکمه "ثبت" کلیک می‌شود، پاپ‌آپ نمایش داده می‌ش
+        // $(document).ready(function() {
+        //     // وقتی دکمه "ثبت" کلیک می‌شود، پاپ‌آپ نمایش داده می‌ش
 
-            // هنگام ارسال فرم لاگین
-            $('#loginForm').submit(function(event) {
-                event.preventDefault();
+        //     // هنگام ارسال فرم لاگین
+        //     $('#loginForm').submit(function(event) {
+        //         event.preventDefault();
 
-                // بررسی وجود مقادیر در فیلدها
-                var nameValue = $('#name_form').val();
-                var passwordValue = $('#password').val();
+        //         // بررسی وجود مقادیر در فیلدها
+        //         var nameValue = $('#name_form').val();
+        //         var passwordValue = $('#password').val();
 
-                if (nameValue && passwordValue) {
-                    // ارسال درخواست به سمت سرور
-                    $.ajax({
-                        type: "POST",
-                        url: $(this).attr('action'),
-                        data: $(this).serialize(),
-                        dataType: 'json',
-                        success: function(response) {
-                            // دریافت پاسخ موفقیت‌آمیز
-                            // هدایت کاربر به مسیر موردنظر
-                            window.location.href = '/Admin_page';
-                            // مثال: هدایت به صفحه خوش‌آمدگویی
-                        },
+        //         if (nameValue && passwordValue) {
+        //             // ارسال درخواست به سمت سرور
+        //             $.ajax({
+        //                 type: "POST",
+        //                 url: $(this).attr('action'),
+        //                 data: $(this).serialize(),
+        //                 dataType: 'json',
+        //                 success: function(response) {
+        //                     // دریافت پاسخ موفقیت‌آمیز
+        //                     // هدایت کاربر به مسیر موردنظر
+        //                     window.location.href = {{url('back.tabel_order')}};
+                            
+        //                     // مثال: هدایت به صفحه خوش‌آمدگویی
+        //                 },
 
-                        error: function(xhr, status, error) {
-                            // بررسی کد وضعیت خطا
-                            if (xhr.status == 300) {
-                                // نمایش پیام خطا به کاربر
-                                alert("نام کاربری یا رمز عبور نامعتبر است.");
-                            }
-                        }
-                    });
-                } else {
-                    // اطلاع دادن به کاربر در مورد فیلدهای خالی
-                    alert('لطفاً فیلدها را پر کنید.');
-                }
-            });
+        //                 error: function(xhr, status, error) {
+        //                     // بررسی کد وضعیت خطا
+        //                     if (xhr.status == 300) {
+        //                         // نمایش پیام خطا به کاربر
+        //                         alert("نام کاربری یا رمز عبور نامعتبر است.");
+        //                     }
+        //                 }
+        //             });
+        //         } else {
+        //             // اطلاع دادن به کاربر در مورد فیلدهای خالی
+        //             alert('لطفاً فیلدها را پر کنید.');
+        //         }
+        //     });
 
 
-        });
+        // });
 
 
 

@@ -7,6 +7,9 @@ use App\Models\User;
 use App\Http\Controllers\Controller;
 use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Auth;
+
 
 class LoginController extends Controller
 {
@@ -20,19 +23,38 @@ class LoginController extends Controller
         $user = User::where('name', $request->nameform)->first();
         $user->password = Hash::make($request->password);
         $user->save();
-        return response()->json(['success' => true]);
-      } else {
+        // Auth::user($user);
+         session()->put('user', $user);  
+        $info_order =Order::paginate(10); 
+       
+        return view('back.tabel_order', compact('info_order'));
+        // return redirect()->route('home');
+        
+          // return response()->json(['success' => true]);
+      }  
+     
+
+        else {
+          $msg='اطلاعات شما صحیح نیست مجدد تلاش کنید';
+          
+          return redirect(route('home'))->with('danger', $msg);
         // رمز عبور یا نام کاربری نامعتبر باشد
-        return response()->json(['error' => 'نام کاربری یا رمز عبور نامعتبر است.'], 300);
+        // return response()->json(['error' => 'نام کاربری یا رمز عبور نامعتبر است.'], 300);
       }
-    }
 
-    public function index_members(){
       
-      $info_order =Order::all();
-      return view('back.tabel_order', compact('info_order'));
-
+    
+    
     }
+ 
+   
+public function paginate(Request $request)
+{
+    // اجرای کد مربوط به درخواست GET و پیجینیشن
+    $info_order = Order::paginate(10);
+    return view('back.tabel_order', compact('info_order'));
+}
 
+    
   }
 

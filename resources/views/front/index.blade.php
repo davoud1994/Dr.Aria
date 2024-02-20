@@ -218,6 +218,8 @@
 
 <body id='body' dir="auto">
 
+
+
     <!-- Preloader -->
     <div class="preloader">
         <div class="loader">
@@ -251,7 +253,11 @@
                 class="btn">Buy Pro Version</a>
         </div>
     </ul>
-
+    @if (session()->has('danger'))
+        <div class="alert alert-danger" style="text-align:right">
+            {{ session('danger') }}
+        </div>
+    @endif
     <!-- Header Area -->
     <header class="header">
         <!-- Topbar -->
@@ -261,13 +267,17 @@
                     <div class="col-lg-6 col-md-5 col-12">
                         <!-- Contact -->
                         <ul class="top-link">
+                            {{-- @if (session('user'))
+                                <a href="{{ route('submit') }}" class="btn btn-success">مدیریت</a>
+                            @endif --}}
                             <li><a href="#"class='btn' id='button-rigester'>ثبت نام</a></li>
                             <li><a href="#" class='btn' id='button-enter'>ورود</a></li>
                             <div id="popup" class="popup">
                                 <div class="popup-content">
                                     <span class="close" id="close">&times;</span>
                                     <h2 class="form-header">فرم ورود</h2>
-                                    <form id="loginForm" method="POST" action="{{route('submit')}}" class="text-right">
+                                    <form id="loginForm" method="POST" action="{{ route('submit') }}"
+                                        class="text-right">
                                         @csrf
                                         <div class="form-group">
                                             <label for="name">:نام کاربری</label>
@@ -305,7 +315,8 @@
                         <div class="col-lg-3 col-md-3 col-12">
                             <!-- Start Logo -->
                             <div class="logo">
-                                <a href="{{ route('home') }}"><img src="{{ url('img\logo.png') }}" alt="*"></a>
+                                <a href="{{ route('home') }}"><img src="{{ url('img\logo.png') }}"
+                                        alt="*"></a>
                             </div>
                             <!-- End Logo -->
                             <!-- Mobile Nav -->
@@ -1358,9 +1369,9 @@
     {{-- <script src="js/bootstrap.min.js"></script>
 		<!-- Main JS -->
 		<script src="js/main.js"></script> --}}
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     @vite('resources/js/app.js')
     <script>
         // تابع جاوااسکریپت برای حرکت به بخش مورد نظر
@@ -1382,47 +1393,48 @@
             document.getElementById('popup').style.display = 'none';
         });
 
-        $(document).ready(function() {
-            // وقتی دکمه "ثبت" کلیک می‌شود، پاپ‌آپ نمایش داده می‌ش
+        // $(document).ready(function() {
+        //     // وقتی دکمه "ثبت" کلیک می‌شود، پاپ‌آپ نمایش داده می‌ش
 
-            // هنگام ارسال فرم لاگین
-            $('#loginForm').submit(function(event) {
-                event.preventDefault();
+        //     // هنگام ارسال فرم لاگین
+        //     $('#loginForm').submit(function(event) {
+        //         event.preventDefault();
 
-                // بررسی وجود مقادیر در فیلدها
-                var nameValue = $('#name_form').val();
-                var passwordValue = $('#password').val();
+        //         // بررسی وجود مقادیر در فیلدها
+        //         var nameValue = $('#name_form').val();
+        //         var passwordValue = $('#password').val();
 
-                if (nameValue && passwordValue) {
-                    // ارسال درخواست به سمت سرور
-                    $.ajax({
-                        type: "POST",
-                        url: $(this).attr('action'),
-                        data: $(this).serialize(),
-                        dataType: 'json',
-                        success: function(response) {
-                            // دریافت پاسخ موفقیت‌آمیز
-                            // هدایت کاربر به مسیر موردنظر
-                            window.location.href = '/Admin_page';
-                            // مثال: هدایت به صفحه خوش‌آمدگویی
-                        },
+        //          if (nameValue && passwordValue) {
+        //             // ارسال درخواست به سمت سرور
+        //             $.ajax({
+        //                 type: "POST",
+        //                 url: $(this).attr('action'),
+        //                 data: $(this).serialize(),
+        //                 dataType: 'json',
+        //                 success: function(response) {
+        //                 //     // دریافت پاسخ موفقیت‌آمیز
+        //                 //     // هدایت کاربر به مسیر موردنظر
+        //                    window.location.href = '';
+        //                 //     // مثال: هدایت به صفحه خوش‌آمدگویی
+        //                  },
 
-                        error: function(xhr, status, error) {
-                            // بررسی کد وضعیت خطا
-                            if (xhr.status == 300) {
-                                // نمایش پیام خطا به کاربر
-                                alert("نام کاربری یا رمز عبور نامعتبر است.");
-                            }
-                        }
-                    });
-                } else {
-                    // اطلاع دادن به کاربر در مورد فیلدهای خالی
-                    alert('لطفاً فیلدها را پر کنید.');
-                }
-            });
+        //                 error: function(xhr, status, error) {
+        //                     // بررسی کد وضعیت خطا
+        //                     if (xhr.status == 300) {
+        //                         // نمایش پیام خطا به کاربر
+        //                         alert("نام کاربری یا رمز عبور نامعتبر است.");
+        //                     }
+        //                 }
+        //             });
+        //         } 
+        //         else {
+        //             // اطلاع دادن به کاربر در مورد فیلدهای خالی
+        //             alert('لطفاً فیلدها را پر کنید.');
+        //         }
+        //     });
 
 
-        });
+        // });
     </script>
 
     {{-- <script>

@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\DocterController;
 use App\Http\Controllers\Aucadmin\LoginController;
+use Illuminate\Pagination\Paginator;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +17,7 @@ use App\Http\Controllers\Aucadmin\LoginController;
 |
 */
 
+
 Route::get('/home',[HomeController::class,'Show'])->name('home');
 // Route::get('/home',[HomeController::class,'index'])->name('home');
 
@@ -24,9 +26,15 @@ Route::post('/order/submit_order',[OrderController::class,'store'])->name('submi
 Route::get('/showdocters',[DocterController::class,'index'])->name('index.docters');
 
 
+Route::post('/Admin', [LoginController::class,'login'])->name('submit');
+Route::get('/Admin', [LoginController::class,'index'])->middleware('auth.access.login');
 
-Route::post('/login/', [LoginController::class,'login'])->name('submit');
 
 
-Route::get('/Admin_page',[LoginController::class,'index_members'])->name('admin_page');
+
+
+
+
+
+
 
