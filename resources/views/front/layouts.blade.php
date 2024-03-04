@@ -45,7 +45,7 @@
         text-align: right;
     }
 
-    .popup {
+    .popup,.popup1 {
             display: none;
             position: fixed;
             z-index: 999;
@@ -104,7 +104,7 @@
             text-align: right;
         }
 
-        #btn_form {
+        #btn_form,#btn_form1  {
             margin-right: 300px;
             font-weight: bold;
             font-family: vazir;
@@ -162,12 +162,32 @@
                         <!-- Contact -->
                         <ul class="top-link">
                             <li><a href="#"class='btn' id='button-rigester'>ثبت نام</a></li>
+                            <div id="popup1" class="popup1">
+                                <div class="popup-content">
+                                    <span class="close" id="close1">&times;</span>
+                                    <h2 class="form-header">ثبت نام</h2>
+                                    <form id="loginForm1" method="POST" action="{{ route('rigester')}}"
+                                        class="text-right">
+                                        @csrf
+                                        <div class="form-group">
+                                            <label for="name">:نام کاربری</label>
+                                            <input type="text" name="namerig" id="name_form1" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password"> :رمز عبور</label>
+                                            <input type="password" name="password_rig" id="password_rig" class="form-control">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary" id='btn_form1'>ورود</button>
+                                    </form>
+                                </div>
+                            </div>
                             <li><a href="#" class='btn' id='button-enter'>ورود</a></li>
                             <div id="popup" class="popup">
                                 <div class="popup-content">
                                     <span class="close" id="close">&times;</span>
                                     <h2 class="form-header">فرم ورود</h2>
-                                    <form id="loginForm" method="POST" action="{{route('submit')}}" class="text-right">
+                                    <form id="loginForm" method="POST" action="{{ route('submit') }}"
+                                        class="text-right">
                                         @csrf
                                         <div class="form-group">
                                             <label for="name">:نام کاربری</label>
@@ -455,49 +475,87 @@
             document.getElementById('popup').style.display = 'none';
         });
 
+
+
        
-        // $(document).ready(function() {
-        //     // وقتی دکمه "ثبت" کلیک می‌شود، پاپ‌آپ نمایش داده می‌ش
+        $(document).ready(function() {
+           // وقتی دکمه "ثبت" کلیک می‌شود، پاپ‌آپ نمایش داده می‌ش
 
-        //     // هنگام ارسال فرم لاگین
-        //     $('#loginForm').submit(function(event) {
-        //         event.preventDefault();
+            // هنگام ارسال فرم لاگین
+            $('#loginForm').submit(function(event) {
+                 event.preventDefault();
 
-        //         // بررسی وجود مقادیر در فیلدها
-        //         var nameValue = $('#name_form').val();
-        //         var passwordValue = $('#password').val();
+                // بررسی وجود مقادیر در فیلدها
+               var nameValue = $('#name_form').val();
+               var passwordValue = $('#password').val();
 
-        //         if (nameValue && passwordValue) {
-        //             // ارسال درخواست به سمت سرور
-        //             $.ajax({
-        //                 type: "POST",
-        //                 url: $(this).attr('action'),
-        //                 data: $(this).serialize(),
-        //                 dataType: 'json',
-        //                 success: function(response) {
-        //                     // دریافت پاسخ موفقیت‌آمیز
-        //                     // هدایت کاربر به مسیر موردنظر
-        //                     window.location.href = {{url('back.tabel_order')}};
-                            
-        //                     // مثال: هدایت به صفحه خوش‌آمدگویی
-        //                 },
+                 if (nameValue && passwordValue) {
+                   // ارسال درخواست به سمت سرور
+                  $.ajax({
+                      type: "POST",
+                      url: $(this).attr('action'),
+                      data: $(this).serialize(),
+                        dataType: 'json',
+                         success: function(response) {
+                         //     // هدایت کاربر به مسیر موردنظر
+                          window.location.href = '/Admin';
+                        
+                          },
 
-        //                 error: function(xhr, status, error) {
-        //                     // بررسی کد وضعیت خطا
-        //                     if (xhr.status == 300) {
-        //                         // نمایش پیام خطا به کاربر
-        //                         alert("نام کاربری یا رمز عبور نامعتبر است.");
-        //                     }
-        //                 }
-        //             });
-        //         } else {
-        //             // اطلاع دادن به کاربر در مورد فیلدهای خالی
-        //             alert('لطفاً فیلدها را پر کنید.');
-        //         }
-        //     });
+                       error: function(xhr, status, error) {
+                            // بررسی کد وضعیت خطا
+                             if (xhr.status == 300) {
+                                 // نمایش پیام خطا به کاربر
+                                 alert("نام کاربری یا رمز عبور نامعتبر است.");
+                            }
+                        }
+                    });
+               } 
+               else {
+                  // اطلاع دادن به کاربر در مورد فیلدهای خالی
+                    alert('لطفاً فیلدها را پر کنید.');
+                 }
+           });
+
+           document.getElementById('button-rigester').addEventListener('click', function() {
+            document.getElementById('popup1').style.display = 'block';
+        });
+
+        document.getElementById('close1').addEventListener('click', function() {
+            document.getElementById('popup1').style.display = 'none';
+        });
+         // هنگام ارسال فرم لاگین
+            $('#loginForm1').submit(function(event) {
+                 event.preventDefault();
+
+                // بررسی وجود مقادیر در فیلدها
+               var nameValue = $('#name_form1').val();
+               var passwordValue = $('#password_rig').val();
+
+                 if (nameValue && passwordValue) {
+                   // ارسال درخواست به سمت سرور
+                  $.ajax({
+                      type: "POST",
+                      url: $(this).attr('action'),
+                      data: $(this).serialize(),
+                        dataType: 'json',
+                         success: function(response) {
+                         //     // هدایت کاربر به مسیر موردنظر
+                        //   window.location.href = '/home';
+                          alert('اطلاعات شما با موفقیت ثبت گردید');
+                        
+                          },
+                    });
+               } 
+               else {
+                  // اطلاع دادن به کاربر در مورد فیلدهای خالی
+                    alert('لطفاً فیلدها را پر کنید.');
+                 }
+           });
 
 
-        // });
+
+         });
 
 
 

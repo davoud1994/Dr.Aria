@@ -1,5 +1,5 @@
 import './bootstrap';
-import "./jquery.min";
+// import "./jquery.min";
 
 import "./jquery-migrate-3.0.0";
 
